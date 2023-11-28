@@ -22,53 +22,8 @@
 <p>Unlock budget-friendly destinations with Travel Wise's Smart Search—your gateway to affordable exploration, curated for unforgettable experiences within your means</p>
 </head>
 <body>
-    <?php
-    $server = "localhost";
-    $userid = "uuwqcmqvkoyqq";
-    $pw = "`%c8@keh6)d;";
-    $db= "dbicelpw4wwpmg";
-
-     // Create connection
-     $conn = new mysqli($server, $userid, $pw );
-
-     // Check connection
-     if ($conn->connect_error) {
-         die("Connection failed: " . $conn->connect_error);
-     }
-     //echo "Connected successfully<br>";
- 
-     //select the database
-     $conn->select_db($db);
-
-     //run a query
-     $query = "SELECT * from Countries";
-     $result = mysqli_query($conn, $query);
-
-     $count = 0;
+   <?php
      echo '<form name="smartSearchForm" action="yourDest.php" method="post" >';
-     while ($rows = mysqli_fetch_assoc($result)) {
-        //create variables for the items in the database
-        $Name = $rows['Name'];
-        $Price = $rows['Price'];
-        $Description = $rows['Description'];
-        $Image = $rows['Image'];
-
-        $n = "q" . $count;
-        // echo "<script>";
-        echo '<select id="numItems" name =' . $n . ' placeholder="0" onchange="itemIsSelected()">';
-        echo '<div id="dropdown-content">
-        <option value="" disabled selected>Select a quantity</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        </div>
-        </select>';
-        $count++;
-     }
-     //close connection
-     $conn->close();
     ?>
     <br>
     <!-- create order form -->
