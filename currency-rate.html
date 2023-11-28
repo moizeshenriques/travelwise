@@ -8,17 +8,34 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
+        // Form validation for footer 
+        document.addEventListener('DOMContentLoaded', function () {
+            const subscribeButton = document.querySelector('.subscribe-button');
+            const emailInput = document.querySelector('.email-input');
+
+            subscribeButton.addEventListener('click', function () {
+                if (emailInput.value.trim() === '') {
+                    alert('Please enter your email address.');
+                } else {
+                        alert('Thank you for subscribing to our newsletter!');
+                        emailInput.value = ''; // Clear the email input
+                    }
+                }
+            });
+        });
+
+        //Getting data from API
         function fetchExchangeRates() {
             return fetch('https://open.er-api.com/v6/latest')
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Network response was not ok');
+                        throw new Error('Network response failed.');
                     }
                     return response.json();
                 })
                 .then(data => data.rates)
                 .catch(error => {
-                    console.error('Error fetching exchange rates:', error);
+                    console.error('Error fetching exchange rates, please try again', error);
                 });
         }
 
