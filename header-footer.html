@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
     <link rel="stylesheet" href="styles.css">
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const subscribeButton = document.querySelector('.subscribe-button');
+            const emailInput = document.querySelector('.email-input');
+
+            subscribeButton.addEventListener('click', function () {
+                if (emailInput.value.trim() === '') {
+                    alert('Please enter your email address.');
+                } else {
+                    const confirmed = confirm('Are you sure you want to subscribe?');
+                    if (confirmed) {
+                        alert('Subscription successful!');
+                        emailInput.value = ''; // Clear the email input
+                    } else {
+                        alert('Subscription canceled.');
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 
