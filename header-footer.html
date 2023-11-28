@@ -14,12 +14,8 @@
                 if (emailInput.value.trim() === '') {
                     alert('Please enter your email address.');
                 } else {
-                    const confirmed = confirm('Are you sure you want to subscribe?');
-                    if (confirmed) {
-                        alert('Subscription successful!');
+                        alert('Thank you for subscribing to our newsletter!');
                         emailInput.value = ''; // Clear the email input
-                    } else {
-                        alert('Subscription canceled.');
                     }
                 }
             });
