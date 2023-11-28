@@ -39,7 +39,8 @@ nav a {
     white-space: nowrap;
     font-family: 'Poppins', sans-serif;
 }
-nav a.active {
+
+nav a:target {
     color:  #b390e6;
 }
 
@@ -53,8 +54,6 @@ footer {
     flex-wrap: wrap;
 }
 
-footer a:hover {
-    color: #8250c9;
 
 .subscribe-container {
     max-width: 40%;
@@ -88,6 +87,9 @@ footer a:hover {
     border-radius: 4px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+}
+.subscribe-button:hover {
+    background-color: #8250c9; 
 }
 
 .page-links {
