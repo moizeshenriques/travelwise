@@ -39,6 +39,9 @@ nav a {
     white-space: nowrap;
     font-family: 'Poppins', sans-serif;
 }
+nav a.active {
+    color:  #b390e6;
+}
 
 footer {
     background-color: #FEEDE1;
@@ -49,6 +52,9 @@ footer {
     align-items: flex-start;
     flex-wrap: wrap;
 }
+
+footer a:hover {
+    color: #8250c9;
 
 .subscribe-container {
     max-width: 40%;
