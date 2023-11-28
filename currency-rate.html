@@ -8,22 +8,20 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
-        // Form validation for footer 
         document.addEventListener('DOMContentLoaded', function () {
             const subscribeButton = document.querySelector('.subscribe-button');
             const emailInput = document.querySelector('.email-input');
-
+        
             subscribeButton.addEventListener('click', function () {
                 if (emailInput.value.trim() === '') {
                     alert('Please enter your email address.');
                 } else {
-                        alert('Thank you for subscribing to our newsletter!');
-                        emailInput.value = ''; // Clear the email input
-                    }
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = ''; // Clear the email input
                 }
             });
         });
-
+        
         //Getting data from API
         function fetchExchangeRates() {
             return fetch('https://open.er-api.com/v6/latest')
@@ -38,27 +36,27 @@
                     console.error('Error fetching exchange rates, please try again', error);
                 });
         }
-
+        
         // Function to calculate the converted amount
         function convertCurrency(amount, rate) {
             return amount * rate;
         }
-    
+        
         // Function to update the converted amount on input change
         function updateConvertedAmount() {
             const amountInput = document.getElementById('amountInput');
             const currencySelect = document.getElementById('currencySelect');
             const resultDiv = document.getElementById('resultDiv');
-    
+        
             // Check if the input is a valid number
             const amount = parseFloat(amountInput.value);
             if (isNaN(amount)) {
                 alert('Please enter a valid number for the amount.');
                 return;
             }
-    
+        
             const selectedCurrency = currencySelect.value;
-    
+        
             // Fetch exchange rates and update the result
             fetchExchangeRates().then(rates => {
                 const rate = rates[selectedCurrency];
@@ -66,18 +64,19 @@
                 resultDiv.textContent = `Converted Amount: ${convertedAmount.toFixed(2)} ${selectedCurrency}`;
             });
         }
-    
+        
         // Function to add click event listener to the "Calculate" button
         document.addEventListener('DOMContentLoaded', function () {
             const calculateButton = document.getElementById('calculateButton');
             calculateButton.addEventListener('click', updateConvertedAmount);
         });
-
+        
         // Function to scroll to calculator
         function scrollToCalculator() {
-        const calculatorSection = document.getElementById('calculator');
-        calculatorSection.scrollIntoView({ behavior: 'smooth' });
-    }
+            const calculatorSection = document.getElementById('calculator');
+            calculatorSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
     </script>
     
     <style>
