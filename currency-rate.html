@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        function fetchExchangeRates() {
+            return fetch('https://open.er-api.com/v6/latest')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => data.rates)
+                .catch(error => {
+                    console.error('Error fetching exchange rates:', error);
+                });
+        }
+
+        // Function to calculate the converted amount
+        function convertCurrency(amount, rate) {
+            return amount * rate;
+        }
+    
+        // Function to update the converted amount on input change
+        function updateConvertedAmount() {
+            const amountInput = document.getElementById('amountInput');
+            const currencySelect = document.getElementById('currencySelect');
+            const resultDiv = document.getElementById('resultDiv');
+    
+            // Check if the input is a valid number
+            const amount = parseFloat(amountInput.value);
+            if (isNaN(amount)) {
+                alert('Please enter a valid number for the amount.');
+                return;
+            }
+    
+            const selectedCurrency = currencySelect.value;
+    
+            // Fetch exchange rates and update the result
+            fetchExchangeRates().then(rates => {
+                const rate = rates[selectedCurrency];
+                const convertedAmount = convertCurrency(amount, rate);
+                resultDiv.textContent = `Converted Amount: ${convertedAmount.toFixed(2)} ${selectedCurrency}`;
+            });
+        }
+    
+        // Function to add click event listener to the "Calculate" button
+        document.addEventListener('DOMContentLoaded', function () {
+            const calculateButton = document.getElementById('calculateButton');
+            calculateButton.addEventListener('click', updateConvertedAmount);
+        });
+
+        // Function to scroll to calculator
+        function scrollToCalculator() {
+        const calculatorSection = document.getElementById('calculator');
+        calculatorSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    </script>
+    
+    <style>
+        .content {
+            display: flex;
+            padding: 20px;
+        }
+
+        .left-section {
+            width: 70%;
+            padding: 20px;
+        }
+
+        .left-section h1 {
+            color: #5842A3; 
+            font-size: 60px;
+            font-family: 'Volkhov', serif; 
+            margin-left: 100px;
+            white-space: nowrap;
+        }
+        .left-section p {
+            color: #6C6C6C; 
+            font-size: 20px; 
+            margin-left: 100px;
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        .button {
+            background: #F76A09;
+            color: #fff;
+            padding: 16px 30px;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            margin-left: 100px;
+            margin-top: 30px;
+        }
+
+        .button:hover {
+        background-color: #f9ad77; 
+        }  
+        
+        .right-section {
+            width: 30%;
+        }
+
+        .right-section img {
+            height: 85%;
+            margin-top: -30px; 
+        }
+
+        .calculator-title {
+            color: #5842A3; 
+            font-size: 24px;
+            text-align: center; 
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .currency-calculator {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-top: -100px;
+            margin-bottom: 40px;
+            background: #FFF; 
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        select {
+            width: 51.5%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        #resultDiv {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .calculate-button {
+            background: #F76A09;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .calculate-button:hover {
+            background-color: #f9ad77;
+        }
+        .calculator-title-container {
+        position: relative;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .disclaimer {
+        display: inline-block;
+        margin-left:10px ;
+    }
+
+    .disclaimer span {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 8px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 200px;
+        text-align: left;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: 5px;
+        left: 75%; 
+        transform: translateX(-50%); 
+    }
+
+    .disclaimer:hover span {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logotravelwise.png" alt="Travel Wise Logo">
+            <h1>Travel Wise</h1>
+        </div>
+        <nav>
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="left-section">
+            <h1>Currency Rates</h1>
+            <p>
+                Unlock the power of real-time information with TravelWise's approach to understanding local currency and costs. TravelWise equips you with the essential details for informed and precise budgeting. Access real-time exchange rates anywhere, ensuring your budget is always up-to-date, whether you're planning or already on your adventure. Here is how to use it:
+            </p>
+            <p>1. Enter the amount in United States Dollars in the "Amount" field.</p>
+                <p>2. Select the desired currency from the drop-down menu.</p>
+                <p>3. Click the "Calculate" button to see the converted amount.</p>
+                <p>4. The result will be displayed below the button.</p>
+            <div class="button-container">
+                <button class="button" onclick="scrollToCalculator()">Try it now!</button>
+            </div>
+        </div>
+        <div class="right-section">
+            <img src="money.png">
+        </div>
+    </div>
+
+    <div class="currency-calculator" id="calculator">
+        <div class="calculator-title-container">
+            <h2 class="calculator-title">Currency Rates Calculator</h2>
+            <div class="disclaimer">
+                <span>
+                    This real-time data is powered by an external API (open.er-api.com).
+                </span>
+                <p class="tooltip">&#9432;</p>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="amountInput">Amount in United States Dollars:</label>
+            <div class="input-container">
+                <input type="number" id="amountInput" placeholder="Enter amount">
+            </div>
+        </div>
+    
+
+        <div class="input-group">
+            <label for="currencySelect">Select Currency:</label>
+            <select id="currencySelect" onchange="updateConvertedAmount()">
+                <option value="AUD">Australian Dollar (AUD)</option>
+                <option value="BRL">Brazilian Real (BRL)</option>
+                <option value="CAD">Canadian Dollar (CAD)</option>
+                <option value="CHF">Swiss Franc (CHF)</option>
+                <option value="CNY">Chinese Yuan (CNY)</option>
+                <option value="EUR">Euro (EUR)</option>
+                <option value="GBP">British Pound (GBP)</option>
+                <option value="HKD">Hong Kong Dollar (HKD)</option>
+                <option value="IDR">Indonesian Rupiah (IDR)</option>
+                <option value="INR">Indian Rupee (INR)</option>
+                <option value="JPY">Japanese Yen (JPY)</option>
+                <option value="MXN">Mexican Peso (MXN)</option>
+                <option value="NIO">Nicaraguan Córdoba (NIO)</option>
+                <option value="NZD">New Zealand Dollar (NZD)</option>
+                <option value="NPR">Nepalese Rupee (NPR)</option>
+                <option value="RUB">Russian Ruble (RUB)</option>
+                <option value="SEK">Swedish Krona (SEK)</option>
+                <option value="SGD">Singapore Dollar (SGD)</option>
+                <option value="USD">United States Dollar (USD)</option>
+                <option value="VND">Vietnamese Đồng (VND)</option>
+                <option value="ZAR">South African Rand (ZAR)</option>
+            </select>
+        </div>
+
+        <button class="calculate-button" onclick="updateConvertedAmount()">Calculate</button>
+        <div id="resultDiv"></div>
+    </div>
+
+    <footer>
+        <div class="subscribe-container">
+            <div class="subscribe-text">
+                <h2>The TravelWise Newsletter</h2>
+                <p>Get inspired! Receive travel discounts, tips, and behind-the-scenes stories.</p>
+            </div>
+            <div class="form-container">
+                <input type="email" class="email-input" placeholder="Your email">
+                <button type="submit" class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+        <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
+        <div class="page-links">
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 TravelWise. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
