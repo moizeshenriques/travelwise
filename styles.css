@@ -40,7 +40,8 @@ nav a {
     font-family: 'Poppins', sans-serif;
 }
 
-nav a:target {
+nav a:hover {
+    text-decoration: none;
     color:  #b390e6;
 }
 
