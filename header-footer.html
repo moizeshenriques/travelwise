@@ -17,9 +17,8 @@
                         alert('Thank you for subscribing to our newsletter!');
                         emailInput.value = ''; // Clear the email input
                     }
-                }
+                });
             });
-        });
     </script>
 </head>
 <body>
@@ -29,11 +28,18 @@
             <img src="logotravelwise.png">
             <h1>Travel Wise</h1>
         </div>
-        <nav>
-            <a href="#">Smart Search</a>
-            <a href="#">Destinations</a>
-            <a href="#">Currency Rates</a>
-            <a href="#">Budgeting Hacks</a>
+
+        <button id="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+
+        <nav class="nav-list" id="myNav-list">
+            <a class="nav-item" href="#">Smart Search</a>
+            <a class="nav-item" href="#">Destinations</a>
+            <a class="nav-item" href="#">Currency Rates</a>
+            <a class="nav-item" href="#">Budgeting Hacks</a>
         </nav>
     </header>
 
@@ -60,5 +66,12 @@
         </div>
     </footer>
 
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        
+        menuButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
