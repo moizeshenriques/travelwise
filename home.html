@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const subscribeButton = document.querySelector('.subscribe-button');
+            const emailInput = document.querySelector('.email-input');
+        
+            subscribeButton.addEventListener('click', function () {
+                if (emailInput.value.trim() === '') {
+                    alert('Please enter your email address.');
+                } else {
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = ''; // Clear the email input
+                }
+            });
+        });
+    </script>
+    
+    <style>
+        .intro-section{
+            display: flex;
+        }
+
+        .intro-text{
+            padding: 50px 100px 25px 100px;
+            flex: 2;
+        }
+
+        .intro-section h5{
+            color: #F76A09;
+            font-size: 14px;
+        }
+
+        .intro-section h1{
+            color: #5842A3;
+            font-family: Volkhov;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -2px;
+        }
+
+        .intro-section p{
+            color: #6C6C6C;
+        }
+
+        .intro-section button{
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 13px;
+            background: #F76A09;
+            color: white; 
+            font-size: 14px;
+            font-weight: 700;
+            font-family: Poppins; 
+        }
+
+        .intro-section img{
+            flex: 1;
+            margin-top: -50px;
+            max-width: 40%;
+        }
+
+        .works-section{
+            padding: 50px 0px 25px 0px;
+            text-align: center;
+        }
+        .works-section h2{
+            color: #F76A09;
+            font-family: Volkhov;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .works-allsteps{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .works-steps{
+            padding: 8px;
+            width: 20%;
+            border-radius: 30px;
+            background-color: #e3e2e1;
+        }
+
+        .works-steps h5{
+            margin-top: -20px;
+            font-size: 16px;
+        }
+
+        .works-steps p{
+            color: #6C6C6C;
+        }
+
+        .works-steps img{
+            width: 80%;
+        }
+
+        .destinations-section{
+            padding: 50px 0px 25px 0px;
+            text-align: center;
+        }
+
+        .destinations-section h5{
+            color: #5842A3;
+            font-size: 14px;
+        }
+
+        .destinations-section h2{
+            color: #F76A09;
+            font-family: Volkhov;
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: -20px;
+            margin-bottom: 50px;
+        }
+
+        .all-destinations{
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .destination{
+            width: 23%;
+            border-radius: 30px;
+            background-color: #e3e2e1;
+        }
+
+        .destination p{
+            display: inline-block;
+            color: #6C6C6C;
+        }
+
+        .destination img{
+            max-width: 100%;
+            height: 250px;
+            border-radius: 30px 30px 0px 0px;
+        }
+
+        .testimonials-section{
+            display: flex;
+            justify-content: center;
+            padding: 75px 0px 50px 0px;
+            gap: 50px;
+        }
+
+        .testimonial-heading{
+            width: 25%;
+        }
+
+        .testimonial-heading h5{
+            color: #5842A3;
+            font-size: 14px;
+        }
+
+        .testimonial-heading h2{
+            color: #F76A09;
+            font-family: Volkhov;
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: -10px;
+        }
+
+        .testimonial-entry{
+            width: 40%;
+        }
+
+        .testimonial-entry img{
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-left: -50px;
+            margin-bottom: -30px;
+        }
+
+        .testimonial-text{
+            padding: 40px;
+            height: 50%;
+            background-color: #e3e2e1;
+            color: #6C6C6C;
+        }
+
+        .testimonial-text p{
+            margin-top: -10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logotravelwise.png">
+            <h1>Travel Wise</h1>
+        </div>
+
+        <button id="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+
+        <nav class="nav-list" id="myNav-list">
+            <a class="nav-item" href="#">Smart Search</a>
+            <a class="nav-item" href="#">Destinations</a>
+            <a class="nav-item" href="#">Currency Rates</a>
+            <a class="nav-item" href="#">Budgeting Hacks</a>
+        </nav>
+    </header>
+
+    <div class= "intro-section">
+        <div class= "intro-text">
+            <h5>BEST DESTINATIONS AROUND THE WORLD - THAT FIT IN YOUR POCKET</h5>
+            <h1>Travel, enjoy and explore within your budget!</h1>
+            <p>Discover the world without breaking the bank with TravelWise. Navigate
+            our selection of affordable destinations, designed with your budget in mind.
+            Embrace the freedom to explore, unwind, and make memories, all while staying
+            within your means.</p>
+            <button type = "button">Find out more</button>
+        </div>
+        <img src="images/home/plane.png" alt="Plane">
+    </div>
+
+    <div class= "works-section">
+        <h2>How TravelWise Works</h2>
+        <div class="works-allsteps">
+            <div class="works-steps">
+                <img src="images/home/budget.png" alt="Budget">
+                <h5>Set your budget</h5>
+                <p>Start by setting your travel budget in your preferred currency.</p>
+            </div>
+            <div class="works-steps">
+                <img src="images/home/earth.png" alt="Earth">
+                <h5>Use our Smart Search tool</h5>
+                <p>Start by setting your travel budget in your preferred currency.</p>
+            </div>
+            <div class="works-steps">
+                <img src="images/home/itinerary.png" alt="itinerary">
+                <h5>Plan itinerary</h5>
+                <p>Estimate costs, book accommodations, and plan activities – all within your budget!</p>
+            </div>
+            <div class="works-steps">
+                <img src="images/home/expenses.png" alt="Expenses">
+                <h5>Track expenses in real-time</h5>
+                <p>Track your expenses in real-time with our integrated currency converter.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="destinations-section">
+        <h5>EXPLORE</h5>
+        <h2>Top Destinations</h2>
+        <div class="all-destinations">
+            <div class="destination">
+                <img src="images/home/Vietnam.jpeg" alt="Vietnam">
+                <p>Vietnam</p>
+                <p><b>$35/day</b></p><br>
+                <p>10 Days Trip</p>
+            </div>
+            <div class="destination">
+                <img src="images/home/Srilanka.jpeg" alt="Sri Lanka">
+                <p>Sri Lanka</p>
+                <p><b>$35/day</b></p><br>
+                <p>9 Days Trip</p>
+            </div>
+            <div class="destination">
+                <img src="images/home/Georgia.jpeg" alt="Georgia">
+                <p>Georgia</p>
+                <p><b>$30/day</b></p><br>
+                <p>7 Days Trip</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonials-section">
+        <div class="testimonial-heading">
+            <h5>TESTIMONIALS</h5>
+            <h2>What People Say About Us</h2>
+        </div>
+        <div class="testimonial-entry">
+            <img src="images/home/Girl.jpeg" alt="Girl">
+            <div class="testimonial-text">
+                <p>“TravelWise helped me plan my senior graduation trip with my college roommates!
+                    As recent grads, our budget was skim but we spent the most amazing days in Indonesia
+                    for a little over $40/days.”</p><br>
+                <p><b>Emily Johnson</b></p>
+                <p>College Student</p>
+            </div>  
+        </div>
+    </div>
+    
+
+    <footer>
+        <div class="subscribe-container">
+            <div class="subscribe-text">
+                <h2>The TravelWise Newsletter</h2>
+                <p>Get inspired! Receive travel discounts, tips, and behind-the-scenes stories.</p>
+            </div>
+            <div class="form-container">
+                <input type="email" class="email-input" placeholder="Your email">
+                <button type="submit" class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+        <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
+        <div class="page-links">
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 TravelWise. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        
+        menuButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
