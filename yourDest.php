@@ -241,9 +241,31 @@ form {
     display: flex;
 }
 
-.smart-form-sum p {
-
+.destLocation {
+    width: 40%;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-left: 20px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
+
+.location-container {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+}
+
 </style>
 <head>
 
@@ -330,8 +352,13 @@ form {
                 $items_arr[$count] = $Name;
                 $price_arr[$count] = $Price;
                 $truth_array[$count] =1;
+                echo '<div class="location-container">';
+                echo '<div class="destLocation">';
                 echo $Name . "<br>";
                 echo "$" . $Price . "/day per traveler <br>";
+                echo '<img src="' . $Image . '" width="300" height="200"/><br>';
+                echo '</div>';
+                echo '</div>';
             }
             //increase count by 1
             $count++;
