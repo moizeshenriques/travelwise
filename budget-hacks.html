@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <style>
+        .content {
+            display: flex;
+            padding: 20px;
+        }
+
+        .left-section {
+            width: 65%;
+            padding: 20px;
+        }
+
+        .left-section h1 {
+            color: #5842A3; 
+            font-size: 60px;
+            font-family: 'Volkhov', serif; 
+            margin-left: 100px;
+            white-space: nowrap;
+        }
+        .left-section p {
+            color: #6C6C6C; 
+            font-size: 20px; 
+            margin-left: 100px;
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        .button {
+            background: #F76A09;
+            color: #fff;
+            padding: 16px 30px;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            margin-left: 100px;
+            margin-top: 30px;
+        }
+
+        .button:hover {
+        background-color: #f9ad77; 
+        }  
+        
+        .right-section {
+        width: 35%;
+        padding-top: 20px; 
+        }
+
+        .right-section img {
+        width: 80%; 
+        height: auto; 
+        margin-left: 30px;
+        }
+
+        .transportation {
+        padding: 50px 0;
+        text-align: center;
+        }
+
+        .transportation h2 {
+            color: #F76A09;
+            font-family: 'Volkhov', serif;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .transportation-allsteps {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .transportation-steps {
+            flex: 1;
+            padding: 20px;
+            max-width: 340px;
+            border-radius: 47.884px; /* Updated border-radius value */
+            background: var(--white, #FFF);
+            box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                        0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                        0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                        0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                        0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                        0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+            text-align: center;
+
+        }
+
+        .transportation-steps h5 {
+            margin-top: -20px;
+            font-size: 16px;
+            color: #5842A3;
+            margin-bottom: 10px;
+        }
+
+        .transportation-steps p {
+            color: #6C6C6C;
+            text-align: center;
+        }
+
+        .transportation-steps img {
+            width: 60%;
+            height: auto;
+            margin: 0 auto;
+            display: block; 
+            margin-bottom: 40px;
+        }
+
+                .transportation-steps:nth-child(2) h5 {
+            margin-top: 30px; 
+        }
+
+        .transportation-steps:nth-child(3) img {
+            width: 50%; 
+        }
+
+        .accommodation {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .accommodation h2 {
+            color: #F76A09;
+            font-family: 'Volkhov', serif;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .accommodation-allsteps {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .accommodation-steps {
+            flex: 1;
+            padding: 20px;
+            max-width: 340px;
+            border-radius: 47.884px; 
+            background: var(--white, #FFF);
+            box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                        0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                        0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                        0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                        0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                        0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+            text-align: center;
+        }
+
+        .accommodation-steps h5 {
+            margin-top: -20px;
+            font-size: 16px;
+            color: #5842A3;
+            margin-bottom: 10px;
+        }
+
+        .accommodation-steps p {
+            color: #6C6C6C;
+            text-align: center;
+        }
+
+        .accommodation-steps img {
+            width: 80%; 
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+
+        .accommodation-steps:nth-child(3) img {
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .accommodation-steps:nth-child(3) h5 {
+            margin-top: 50px;
+        }
+
+        .accommodation-steps:nth-child(1) img {
+            width: 50%; 
+            margin-bottom: 40px;
+        }
+
+        .activities {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .activities h2 {
+            color: #F76A09;
+            font-family: 'Volkhov', serif;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .activities-allsteps {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .activities-steps {
+            flex: 1;
+            padding: 20px;
+            max-width: 340px;
+            border-radius: 47.884px;
+            background: var(--white, #FFF);
+            box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                        0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                        0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                        0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                        0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                        0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+            text-align: center;
+        }
+
+        .activities-steps h5 {
+            font-size: 16px;
+            color: #5842A3;
+            margin-bottom: 10px;
+        }
+
+        .activities-steps p {
+            color: #6C6C6C;
+            text-align: center;
+        }
+
+        .activities-steps img {
+
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .activities-steps:nth-child(2) img {
+            width: 80%; 
+        }
+        .activities-steps:nth-child(1) img {
+            width: 65%; 
+        }
+        .activities-steps:nth-child(3) img {
+            width: 65%; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logotravelwise.png" alt="Travel Wise Logo">
+            <h1>Travel Wise</h1>
+        </div>
+        <nav>
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="left-section">
+            <h1>Budgeting Hacks</h1>
+            <p>
+                Unlock the secrets to savvy budgeting with TravelWise's expert-approved Budgeting Hacks. Make the most of every penny and enhance your travel experience with these insider tips:
+            </p>
+        </div>
+        <div class="right-section">
+            <img src="pig.png">
+        </div>
+    </div>
+
+    <div class="transportation">
+        <h2>Transportation Tips</h2>
+        <div class="transportation-allsteps">
+            <div class="transportation-steps">
+                <img src="plane.png">
+                <h5>Flight Booking Hack</h5>
+                <p>Make sure to clear your cookies and browsing history to avoid price increases. When you search for flights, signaling your intent to purchase, prices may surge daily, potentially pressuring you to make impulsive decisions. To mitigate this, consider deleting cookies or utilizing incognito mode during your browsing sessions.</p>
+            </div>
+            <div class="transportation-steps">
+                <img src="bus.png">
+                <h5>Optimizing Public Transportation</h5>
+                <p>Learn how to navigate local transportation networks, discover money-saving hacks for rideshares, and explore the benefits of public transportation for budget-friendly commuting—all while optimizing your travel experience with TravelWise's expert tips.</p>
+            </div>
+            <div class="transportation-steps">
+                <img src="bike.png">
+                <h5>Hidden Transportation Gems</h5>
+                <p>Delve into lesser-known transportation options, such as local shuttles, bike rentals, rental scooters, or even walking tours, to explore your destination in a budget-friendly and eco-friendly way. Engaging with these options can lead to unexpected and memorable travel encounters, while saving a lot of money.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="accommodation">
+        <h2>Accommodation Strategies</h2>
+        <div class="accommodation-allsteps">
+            <div class="accommodation-steps">
+                <img src="clock.png">
+                <h5>Timing is Everything</h5>
+                <p>Book your accommodation well in advance to secure the best deals, especially during peak travel seasons. Conversely, consider last-minute bookings for potential discounts if your plans are flexible.</p>
+            </div>
+            <div class="accommodation-steps">
+                <img src="hostel.png">
+                <h5>Explore Alternative Stays</h5>
+                <p>Consider alternative accommodation options such as vacation rentals, hostels, or boutique hotels. Sometimes, unique and charming stays can offer a more authentic experience and better value for your money.</p>
+            </div>
+            <div class="accommodation-steps">
+                <img src="review.png">
+                <h5>Read Reviews Thoughtfully</h5>
+                <p>Read accommodation reviews with a discerning eye. Look for patterns in feedback and consider the overall rating. Sometimes, hidden gems may have fewer reviews but stellar feedback.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="activities">
+        <h2>Activities Savings</h2>
+        <div class="activities-allsteps">
+            <div class="activities-steps">
+                <img src="dine.png">
+                <h5>Dining on a Dime</h5>
+                <p>Escape the touristy areas to uncover hidden gems that locals frequent. Venture into neighborhoods less frequented by tourists, and you're likely to find eateries serving authentic cuisine at prices that won't strain your budget.</p>
+            </div>
+            <div class="activities-steps">
+                <img src="museums.png">
+                <h5>Museum Free Days</h5>
+                <p>Plan visits to museums on their free admission days or during specific hours when entry is discounted. Research and take advantage of cultural institutions offering complimentary access.</p>
+            </div>
+            <div class="activities-steps">
+                <img src="events.png">
+                <h5>Local Events and Festivals</h5>
+                <p>Check local event calendars for festivals, concerts, or cultural events happening during your visit. Often, these events are free or have minimal entry fees, providing a taste of local culture.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="subscribe-container">
+            <div class="subscribe-text">
+                <h2>The TravelWise Newsletter</h2>
+                <p>Get inspired! Receive travel discounts, tips, and behind-the-scenes stories.</p>
+            </div>
+            <div class="form-container">
+                <input type="email" class="email-input" placeholder="Your email">
+                <button type="submit" class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+        <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
+        <div class="page-links">
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 TravelWise. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
