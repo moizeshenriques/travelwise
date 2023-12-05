@@ -28,6 +28,13 @@
             $('.zoom-in-image').addClass('zoom-in');
         });
     });
+            $(document).ready(function () {
+        $('.find-out-more-btn').click(function () {
+            $('html, body').animate({
+                scrollTop: $('#how-works').offset().top
+            }, 1000); 
+        });
+    });
     </script>
     
     <style>
@@ -273,12 +280,12 @@
             our selection of affordable destinations, designed with your budget in mind.
             Embrace the freedom to explore, unwind, and make memories, all while staying
             within your means.</p>
-            <button type = "button">Find out more</button>
+            <button type="button" class="find-out-more-btn">Find out more</button>
         </div>
         <img class="zoom-in-image" img src="images/home/plane.png" alt="Plane">
     </div>
 
-    <div class= "works-section">
+    <div class="works-section" id="how-works">
         <h2>How TravelWise Works</h2>
         <div class="works-allsteps">
             <div class="works-steps">
