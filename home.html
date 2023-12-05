@@ -21,6 +21,13 @@
                 }
             });
         });
+
+        $(document).ready(function () {
+        $('.intro-section').click();
+        $('.intro-section').click(function () {
+            $('.zoom-in-image').addClass('zoom-in');
+        });
+    });
     </script>
     
     <style>
@@ -35,38 +42,57 @@
 
         .intro-section h5{
             color: #F76A09;
-            font-size: 14px;
+            font-size: 17px;
+            margin-left: 50px;
         }
 
         .intro-section h1{
             color: #5842A3;
             font-family: Volkhov;
-            font-size: 42px;
+            font-size: 57px;
             font-weight: 700;
+            margin-left: 50px;
             letter-spacing: -2px;
         }
 
         .intro-section p{
             color: #6C6C6C;
+            margin-left: 50px;
+            font-size: 17px;
         }
 
         .intro-section button{
-            margin-top: 20px;
-            padding: 10px;
-            border: none;
-            border-radius: 13px;
             background: #F76A09;
-            color: white; 
-            font-size: 14px;
-            font-weight: 700;
-            font-family: Poppins; 
+            color: #fff;
+            padding: 16px 30px;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            margin-left: 50px;
+            margin-top: 30px;
         }
 
         .intro-section img{
             flex: 1;
+            height: auto;
             margin-top: -50px;
             max-width: 40%;
         }
+
+        .zoom-in-image {
+        animation: zoomIn 2s ease-in-out; 
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(2); 
+        }
+    }
 
         .works-section{
             padding: 50px 0px 25px 0px;
@@ -90,8 +116,7 @@
             padding: 8px;
             width: 20%;
             border-radius: 30px;
-            background-color: #e3e2e1;
-            /* background: var(--white, #FFF);*/
+            background: var(--white, #FFF);
             box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
                         0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
                         0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
@@ -142,7 +167,13 @@
         .destination{
             width: 23%;
             border-radius: 30px;
-            background-color: #e3e2e1;
+            background: var(--white, #FFF);
+            box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                        0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                        0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                        0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                        0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                        0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
         }
 
         .destination p{
@@ -161,6 +192,7 @@
             justify-content: center;
             padding: 75px 0px 50px 0px;
             gap: 50px;
+            
         }
 
         .testimonial-heading{
@@ -182,6 +214,7 @@
 
         .testimonial-entry{
             width: 40%;
+
         }
 
         .testimonial-entry img{
@@ -195,8 +228,14 @@
         .testimonial-text{
             padding: 40px;
             height: 50%;
-            background-color: #e3e2e1;
             color: #6C6C6C;
+            background: var(--white, #FFF);
+            box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                        0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                        0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                        0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                        0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                        0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
         }
 
         .testimonial-text p{
@@ -236,7 +275,7 @@
             within your means.</p>
             <button type = "button">Find out more</button>
         </div>
-        <img src="images/home/plane.png" alt="Plane">
+        <img class="zoom-in-image" img src="images/home/plane.png" alt="Plane">
     </div>
 
     <div class= "works-section">
