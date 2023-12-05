@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const subscribeButton = document.querySelector('.subscribe-button');
+            const emailInput = document.querySelector('.email-input');
+        
+            subscribeButton.addEventListener('click', function () {
+                if (emailInput.value.trim() === '') {
+                    alert('Please enter your email address.');
+                } else {
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = ''; // Clear the email input
+                }
+            });
+        });
+    </script>
+    
+    <style>
+    .explore-bali-section{
+        padding: 50px 100px 25px 100px;
+    }
+
+    .explore-bali-section h1{
+        color: #5842A3;
+        font-family: Volkhov;
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: -2px;
+    }
+
+    .explore-bali-section p{
+        margin-bottom: 50px;
+        font-size: 18px;
+    }
+
+    .bali-essentials-section{
+        padding: 50px 100px 25px 100px;
+    }
+
+    .bali-essentials-section h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .bali-essentials-section h4{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 22px;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logotravelwise.png">
+            <h1>Travel Wise</h1>
+        </div>
+
+        <button id="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+
+        <nav class="nav-list" id="myNav-list">
+            <a class="nav-item" href="#">Smart Search</a>
+            <a class="nav-item" href="#">Destinations</a>
+            <a class="nav-item" href="#">Currency Rates</a>
+            <a class="nav-item" href="#">Budgeting Hacks</a>
+        </nav>
+    </header>
+
+
+    <div class ="explore-bali-section">
+        <h1>Explore: Bali</h1>
+        <p>Immerse yourself in the tranquility of lush rice terraces, discover the ancient mystique of intricately
+           adorned temples, and stroll along pristine beaches embraced by the vibrant energy of the island. From the
+           cultural heart of Ubud to the sun-kissed shores of Seminyak, Bali beckons with diverse landscapes and a warm
+           embrace of spirituality. Indulge in Balinese cuisine, witness captivating ceremonies, and find moments of 
+           serenity in spa rituals. Here, every corner unveils a new chapter, weaving together nature's beauty, cultural
+           richness, and the undeniable allure of this enchanting destination.</p>
+        <img src="images/bali/explorebali.png" alt="Bali">
+    </div>
+
+    <div class="bali-essentials-section">
+        <h2>Bali Essentials</h2>
+        <div class ="bali-essentials-text">
+            <h4>What to do</h4>
+            <p>Discover must-see spots, unique journeys, and signature experiences that define the island's allure.</p>
+        </div>
+        <div class ="bali-essentials-img">
+            <div class = "bali-essential">
+                <img src="images/bali/tanahlot.jpeg" alt="Tanah Lot">
+                <p>Tanah Lot</p>
+                <p>4</p>
+                <p>Religious Sites, Landmarks</p>
+            </div>
+            <div class = "bali-essential">
+                <img src="images/bali/purabratan.jpeg" alt="Pura Bratan">
+                <p>Pura Bratan</p>
+                <p>5</p>
+                <p>Religious Sites, Landmarks</p>
+            </div>
+            <div class = "bali-essential">
+                <img src="images/bali/kelingkingbeach.jpeg" alt="kelingking Beach">
+                <p>Kelingking Beach</p>
+                <p>5</p>
+                <p>Beaches</p>
+            </div>
+        </div> 
+    </div>
+
+
+
+    <footer>
+        <div class="subscribe-container">
+            <div class="subscribe-text">
+                <h2>The TravelWise Newsletter</h2>
+                <p>Get inspired! Receive travel discounts, tips, and behind-the-scenes stories.</p>
+            </div>
+            <div class="form-container">
+                <input type="email" class="email-input" placeholder="Your email">
+                <button type="submit" class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+        <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
+        <div class="page-links">
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 TravelWise. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        
+        menuButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
