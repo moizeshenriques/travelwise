@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const subscribeButton = document.querySelector('.subscribe-button');
+            const emailInput = document.querySelector('.email-input');
+        
+            subscribeButton.addEventListener('click', function () {
+                if (emailInput.value.trim() === '') {
+                    alert('Please enter your email address.');
+                } else {
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = ''; // Clear the email input
+                }
+            });
+        });
+
+    function scrollToPackages() {
+    const packagesSection = document.getElementById('packages-section');
+    packagesSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+
+    </script>
+    <style>
+            .content {
+            display: flex;
+            padding: 20px;
+        }
+
+        .left-section {
+            width: 65%;
+            padding: 20px;
+        }
+
+        .left-section h1 {
+            color: #5842A3; 
+            font-size: 60px;
+            font-family: 'Volkhov', serif; 
+            margin-left: 100px;
+            white-space: nowrap;
+        }
+        .left-section p {
+            color: #6C6C6C; 
+            font-size: 20px; 
+            margin-left: 100px;
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        .button {
+            background: #F76A09;
+            color: #fff;
+            padding: 16px 30px;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            margin-left: 100px;
+            margin-top: 30px;
+        }
+
+        .button:hover {
+        background-color: #f9ad77; 
+        }  
+        
+        .right-section {
+        width: 35%;
+        padding-top: 20px; 
+        }
+
+        .right-section img {
+        width: 120%; 
+        height: auto; 
+        margin-right: 20px;
+        margin-top: -40px;
+        }
+        .button {
+            background: #F76A09;
+            color: #fff;
+            padding: 16px 30px;
+            border: none;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            margin-left: 100px;
+            margin-top: 30px;
+        }
+
+        .packages-section {
+            padding: 50px;
+            text-align: center;
+            color: #6C6C6C; 
+        }
+
+        .packages-section h2 {
+            color: #F76A09;
+            font-family: 'Volkhov', serif;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .packages-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background: var(--white, #FFF);
+                box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                            0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                            0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                            0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                            0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                            0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+            text-align: left;
+        }
+
+
+        .packages-table th, .packages-table td {
+            border: 1px solid #ddd;
+            padding: 15px;
+        }
+
+        .packages-table th {
+            background-color: #5842A3;
+            color: #fff;
+        }
+
+        .packages-table td ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .packages-table td ul li {
+            margin-bottom: 8px;
+        }
+
+        .package-signup-button {
+            background: #F76A09;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .package-signup-button:hover {
+            background-color: #f9ad77;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logotravelwise.png" alt="Travel Wise Logo">
+            <h1>Travel Wise</h1>
+        </div>
+        <nav>
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="left-section">
+            <h1>TravelWise Packages</h1>
+            <p>
+                Say goodbye to generic travel plans. Our team of experienced travel agents will work closely with you to create a personalized itinerary tailored to your preferences and interests. Explore all of our affordable package options and choose the one that fits your needs and budget! Check out our options:
+            </p>
+            <p>1. Premium Package - Best Value!</p>
+            <p>2. Intermediate Package </p>
+            <p>3. Basic Package</p>
+            <div class="button-container">
+                <button class="button" onclick="scrollToPackages()">Explore your options!</button>
+            </div>
+        </div>
+        <div class="right-section">
+            <img src="passport.png">
+        </div>
+    </div>
+
+    <div class="packages-section" id="packages-section">
+        <h2>Our Travel Packages</h2>
+        <table class="packages-table">
+            <thead>
+                <tr>
+                    <th>Package</th>
+                    <th>Price</th>
+                    <th>Features</th>
+                    <th>Sign Up</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Premium Package <br> Best Value!</td>
+                    <td>$200 one-time payment</td>
+                    <td>
+                        <ul>
+                            <li>• Full-Service Concierge</li>
+                            <li>• Personalized itinerary with premium experiences</li>
+                            <li>• Full-service booking for flights, accommodations, and activities</li>
+                            <li>• VIP access to exclusive events and attractions</li>
+                            <li>• Dedicated travel concierge for trip assistance</li>
+                            <li>• Priority customer support with faster response times</li>
+                            <li>• Customized travel packages for special occasions</li>
+                        </ul>
+                    </td>
+                    <td><button class="package-signup-button">Sign Up</button></td>
+                <tr>
+                    <td>Intermediate Package</td>
+                    <td>$150 one-time payment</td>
+                    <td>
+                        <ul>
+                            <li>• Itinerary Planning and Booking Assistance</li>
+                            <li>• Personalized itinerary planning based on preferences</li>
+                            <li>• Booking assistance for accommodations and transportation</li>
+                            <li>• Detailed destination information and local tips</li>
+                            <li>• 24/7 customer support during the trip</li>
+                            <li>• Access to exclusive travel deals and discounts</li>
+                            <li>• Assistance with visa and travel documentation</li>
+                        </ul>
+                    </td>
+                    <td><button class="package-signup-button">Sign Up</button></td>
+                </tr>
+                <tr>
+                    <td>Basic Package</td>
+                    <td>$100 one-time payment</td>
+                    <td>
+                        <ul>
+                            <li>• Budget-Focused Assistance</li>
+                            <li>• Assistance in creating a budget-friendly travel plan</li>
+                            <li>• Basic itinerary suggestions</li>
+                            <li>• Access to budget travel tips and hacks</li>
+                            <li>• Limited support during the trip</li>
+                            <li>• Email support for travel-related queries</li>
+                            <li>• Regular updates on budget travel trends</li>
+                        </ul>
+                    </td>
+                    <td><button class="package-signup-button">Sign Up</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <footer>
+        <div class="subscribe-container">
+            <div class="subscribe-text">
+                <h2>The TravelWise Newsletter</h2>
+                <p>Get inspired! Receive travel discounts, tips, and behind-the-scenes stories.</p>
+            </div>
+            <div class="form-container">
+                <input type="email" class="email-input" placeholder="Your email">
+                <button type="submit" class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+        <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
+        <div class="page-links">
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 TravelWise. All rights reserved.
+        </div>
+    </footer>
