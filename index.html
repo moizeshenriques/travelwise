@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -81,12 +81,6 @@
             margin-top: 30px;
         }
 
-        .find-out-more-btn:hover {
-            background-color: #5842A3;
-            color: white;
-            box-shadow: 2px 2px 2px 2px #666;
-        }
-
         .intro-section img{
             flex: 1;
             height: auto;
@@ -157,6 +151,7 @@
 
         .destinations-section{
             padding: 50px 0px 25px 0px;
+            text-align: center;
         }
 
         .destinations-section h5{
@@ -203,7 +198,8 @@
         }
 
         .testimonials-section{
-            text-align: center;
+            /* display: flex; */
+            justify-content: center;
             padding: 75px 0px 50px 0px;
             gap: 50px;
             margin-left: 20%;
@@ -215,9 +211,8 @@
         }
 
         .testimonial-heading h5{
-            color: #F76A09;
-            font-size: 17px;
-            margin-left: 50px;
+            color: #5842A3;
+            font-size: 14px;
         }
 
         .testimonial-heading h2{
@@ -225,11 +220,12 @@
             font-family: Volkhov;
             font-size: 30px;
             font-weight: 700;
-            margin-bottom: 50px;
+            margin-top: -10px;
         }
 
         .testimonial-entry{
             width: 70%;
+            /* was 30 */
 
         }
 
@@ -256,6 +252,13 @@
 
         .testimonial-text p{
             margin-top: -10px;
+        }
+
+        .find-out-more-btn:hover {
+            background-color: #5842A3;
+            color: white;
+            box-shadow: 2px 2px 2px 2px #666;
+
         }
 
     </style>
@@ -349,10 +352,10 @@
     <div class="testimonials-section">
         <div class="testimonial-heading">
             <h5>TESTIMONIALS</h5>
-            <h2>What People Say About Us</h2>
+            <h2>What People Say <br>About Us</h2>
         </div>
         <div class="testimonial-entry">
-            <img src="images/home/newgirl.png" alt="Girl">
+            <img src="images/home/Girl.jpeg" alt="Girl">
             <div class="testimonial-text">
                 <p>“TravelWise helped me plan my senior graduation trip with my college roommates!
                     As recent grads, our budget was skim but we spent the most amazing days in Indonesia
@@ -366,11 +369,10 @@
         <div class="testimonial-entry">
             <img src="images/home/manheadshot.png" alt="Man">
             <div class="testimonial-text">
-                <p>“I recently had the pleasure of using TravelWise to plan a
-                     group trip for a milestone celebration,
-                    and I couldn't be happier with the experience. From the 
-                    initial consultation to the final farewell, TravelWise demonstrated unparalleled
-                    expertise, dedication, and a genuine commitment to making our trip extraordinary.”</p><br>
+                <p>“I recently had the pleasure of using TravelWise to plan a group trip for a milestone 
+                    celebration, and I couldn't be happier with the experience. From the initial 
+                    consultation to the final farewell, TravelWise demonstrated unparalleled expertise,
+                    dedication, and a genuine commitment to making our trip extraordinary.”</p><br>
                 <p><b>Richard Miller</b></p>
                 <p>Lawyer</p>
             </div>  
