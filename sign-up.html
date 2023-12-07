@@ -109,6 +109,55 @@
             background-color: #f9ad77;
         }
 
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+
+            .logo {
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+
+            .logo img {
+                width: 50%;
+                margin: 0;
+            }
+
+            .logo h1 {
+                font-size: 0;
+            }
+
+            #menu-button {
+                display: block;
+                width: 100%;
+                margin-left: 0; 
+                margin-top: 0;
+                flex-direction: column;
+            }
+
+            #myNav-list {
+                display: none;
+            }
+
+            #menu-button.active + #myNav-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            #signup-form button {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .subscribe-button {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -118,6 +167,11 @@
             <h1>Travel Wise</h1>
         </div>
 
+        <button id="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
 
         <nav class="nav-list" id="myNav-list">
             <a class="nav-item" href="#">Smart Search</a>
@@ -183,3 +237,11 @@
             &copy; 2023 TravelWise. All rights reserved.
         </div>
     </footer>
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        
+        menuButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
