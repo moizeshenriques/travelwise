@@ -217,8 +217,11 @@
 
     @media screen and (max-width: 600px) {
         .explore-bali-section {
-            padding: 20px;
+            padding: 0px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .explore-bali-section img {
@@ -229,6 +232,55 @@
         .bali-essentials-section {
             padding: 20px;
             text-align: center;
+        }
+
+        .what-to-do-section {
+            flex-direction: column;
+        }
+
+        .do-places-text {
+            max-width: 100%;
+        }
+
+        .do-places-text h4, .eat-places-text h4 {
+            margin: 0;
+        }
+
+        .do-places-img {
+            flex-direction: column;
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .what-to-eat-section {
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .eat-places-text {
+            max-width: 100%;
+        }
+
+        .eat-places-img {
+            flex-direction: column;
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .destinations-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .all-destinations {
+            flex-direction: column;
+            width: 300px;
         }
     }
     </style>
