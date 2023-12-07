@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const subscribeButton = document.querySelector('.subscribe-button');
+            const emailInput = document.querySelector('.email-input');
+        
+            subscribeButton.addEventListener('click', function () {
+                if (emailInput.value.trim() === '') {
+                    alert('Please enter your email address.');
+                } else {
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = ''; // Clear the email input
+                }
+            });
+        });
+    </script>
+    
+    <style>
+    .explore-france-section{
+        padding: 50px 100px 25px 100px;
+    }
+
+    .explore-france-section h1{
+        color: #5842A3;
+        font-family: Volkhov;
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: -2px;
+    }
+
+    .explore-france-section p{
+        margin-bottom: 50px;
+        font-size: 18px;
+        width: 80%;
+    }
+
+    .explore-france-section img{
+        width: 100%;
+    }
+
+    .france-essentials-section{
+        padding: 50px 100px 25px 100px;
+    }
+
+    .france-essentials-section h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .what-to-do-section{
+        display: flex;
+    }
+
+    .do-places-text{
+        flex: 1; 
+        max-width: 30%;
+    }
+
+    .do-places-img{
+        flex: 2; 
+        display: flex;
+        margin-left: 50px;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .do-places-text h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .do-places-text h4{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 22px;
+    }
+    
+    .place {
+        width: 90%;
+        border-radius: 30px;
+        background: var(--white, #FFF);
+        box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+    }
+
+    .place p{
+            display: inline-block;
+            color: #6C6C6C;
+            padding: 0 15px;
+        }
+
+    .place img {
+        max-width: 100%;
+        height: 250px;
+        border-radius: 30px 30px 0px 0px;
+    }
+
+    .what-to-eat-section{
+        display: flex;
+        margin-top: 100px;
+    }
+
+    .eat-places-text{
+        flex: 1; 
+        max-width: 30%;
+    }
+
+    .eat-places-img{
+        flex: 2; 
+        display: flex;
+        margin-left: 50px;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .eat-places-text h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .eat-places-text h4{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 22px;
+    }
+    
+    .eat-place {
+        width: 80%;
+        border-radius: 30px;
+        background: var(--white, #FFF);
+        box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+    }
+
+    .eat-place p{
+            display: inline-block;
+            color: #6C6C6C;
+            padding: 0 15px;
+        }
+
+    .eat-place img {
+        max-width: 100%;
+        height: 250px;
+        border-radius: 30px 30px 0px 0px;
+        object-fit: cover;
+    }
+
+    .destinations-section{
+        padding: 50px 100px 50px 100px;
+        
+    }
+
+    .destinations-section h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .all-destinations{
+        display: flex; 
+        gap: 20px;
+    }
+
+    .destination{
+        display: flex;
+        position: relative;
+        border-radius: 30px;
+        width: 100%;
+        height: 300px;
+    }
+
+    .destination-content{
+        align-self: flex-end;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: white;
+    }
+    
+    .destination:nth-child(1) {
+    background: url('images/france/paris.jpg') center/cover;
+    }
+
+    .destination:nth-child(2) {
+    background: url('images/france/toulouse.jpg') center/cover;
+    }
+
+    .destination:nth-child(3) {
+    background: url('images/france/nice.jpg') center/cover;
+    }
+
+    .destination:nth-child(4) {
+    background: url('images/france/bordeaux.jpg') center/cover;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .explore-france-section {
+            padding: 0px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .explore-france-section img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .france-essentials-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .what-to-do-section {
+            flex-direction: column;
+        }
+
+        .do-places-text {
+            max-width: 100%;
+        }
+
+        .do-places-text h4, .eat-places-text h4 {
+            margin: 0;
+        }
+
+        .do-places-img {
+            flex-direction: column;
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .what-to-eat-section {
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .eat-places-text {
+            max-width: 100%;
+        }
+
+        .eat-places-img {
+            flex-direction: column;
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .destinations-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .all-destinations {
+            flex-direction: column;
+            width: 300px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logotravelwise.png">
+            <h1>Travel Wise</h1>
+        </div>
+
+        <button id="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+
+        <nav class="nav-list" id="myNav-list">
+            <a class="nav-item" href="#">Smart Search</a>
+            <a class="nav-item" href="#">Destinations</a>
+            <a class="nav-item" href="#">Our Packages</a>
+            <a class="nav-item" href="#">Currency Rates</a>
+            <a class="nav-item" href="#">Budgeting Hacks</a>
+        </nav>
+    </header>
+
+
+    <div class ="explore-france-section">
+        <h1>Explore: France</h1>
+        <p>Embark on a captivating journey through the timeless allure of France, where each moment unveils a rich tapestry
+           woven with history, art, and regional charm. From the sun-kissed vineyards of Bordeaux to the Gothic splendor of
+           Chartres, and the rustic beauty of Provence to the idyllic beaches of the French Riviera, every corner resonates
+           with centuries-old echoes. Paris, with its iconic Eiffel Tower, epitomizes romance amid cultural grandeur, while
+           Lyon, the culinary capital, showcases the gastronomic heritage. Savor Champagne in its vineyards and immerse yourself
+           in spirited local festivals, from the vibrant carnivals of Nice to the cultural revelry of Avignon. France invites you
+           to uncover new chapters in this enthralling narrative, seamlessly blending the elegance of the countryside with the cosmopolitan
+           vibrancy of its cities.</p>
+        <img src="images/france/france.jpg" alt="France">
+    </div>
+
+   
+    <div class="france-essentials-section">
+        <h2>France Essentials</h2>
+        <div class="what-to-do-section">
+            <div class ="do-places-text">
+                <h4>What to do</h4>
+                <p>Discover must-see spots, unique journeys, and signature experiences that define the encapsulate the allure of France.</p>
+            </div>
+            <div class ="do-places-img">
+                <div class = "place">
+                    <img src="images/france/eiffeltower.jpg" alt="Eiffel Tower"><br>
+                    <p>Eiffel Tower</p>
+                    <p>5 stars</p><br>
+                    <p>Landmarks</p>
+                </div>
+                <div class = "place">
+                    <img src="images/france/museedorsay.jpg" alt="Musée d'Orsay"><br>
+                    <p>Musée d'Orsay</p>
+                    <p>5 stars</p><br>
+                    <p>Landmarks, Museum</p>
+                </div>
+                <div class = "place">
+                    <img src="images/france/louvre.jpg" alt="Louvre"><br>
+                    <p>Louvre</p>
+                    <p>5 stars</p><br>
+                    <p>Landmarks, Museum</p>
+                </div>
+            </div> 
+        </div>
+
+        <div class="what-to-eat-section">
+            <div class ="eat-places-text">
+                <h4>What to eat</h4>
+                <p>Explore the classics, embrace local favorites, and uncover hidden gems</p>
+            </div>
+            <div class ="eat-places-img">
+                <div class = "eat-place">
+                    <img src="images/france/lerelais.jpg" alt="Le relais de l'entrecote"><br>
+                    <p>Le relais de l'entrecote</p>
+                    <p>5 stars</p><br>
+                    <p>French</p>
+                </div>
+                <div class = "eat-place">
+                    <img src="images/france/feuillette.jpg" alt="Boulangerie Feuillette"><br>
+                    <p>Boulangerie Feuillette</p>
+                    <p>5 stars</p><br>
+                    <p>Bakery</p>
+                </div>
+                <div class = "eat-place">
+                    <img src="images/france/le428.jpg" alt="Le 428"><br>
+                    <p>Le 428</p>
+                    <p>4 stars</p><br>
+                    <p>French</p>
+                </div>
+            </div> 
+        </div>  
+    </div>
+
+    <div class="destinations-section">
+        <h2>Destinations</h2>
+        <div class="all-destinations">
+            <div class="destination">
+                <div class="destination-content">
+                    <h4>Paris</h4>
+                </div>
+            </div>
+            <div class="destination">
+                <div class="destination-content">
+                    <h4>Toulouse</h4>
+                </div>
+            </div>
+            <div class="destination">
+                <div class ="destination-content">
+                    <h4>Nice</h4>
+                </div>
+            </div>
+            <div class="destination">
+                <div class ="destination-content">
+                    <h4>Bordeaux</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="subscribe-container">
+            <div class="subscribe-text">
+                <h2>The TravelWise Newsletter</h2>
+                <p>Get inspired! Receive travel discounts, tips, and behind-the-scenes stories.</p>
+            </div>
+            <div class="form-container">
+                <input type="email" class="email-input" placeholder="Your email">
+                <button type="submit" class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+        <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
+        <div class="page-links">
+            <a href="#">Home</a>
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Our Packages</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 TravelWise. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        
+        menuButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
