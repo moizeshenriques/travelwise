@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const subscribeButton = document.querySelector('.subscribe-button');
+            const emailInput = document.querySelector('.email-input');
+        
+            subscribeButton.addEventListener('click', function () {
+                if (emailInput.value.trim() === '') {
+                    alert('Please enter your email address.');
+                } else {
+                    alert('Thank you for subscribing to our newsletter!');
+                    emailInput.value = ''; // Clear the email input
+                }
+            });
+        });
+    </script>
+    
+    <style>
+    .explore-iceland-section{
+        padding: 50px 100px 25px 100px;
+    }
+
+    .explore-iceland-section h1{
+        color: #5842A3;
+        font-family: Volkhov;
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: -2px;
+    }
+
+    .explore-iceland-section p{
+        margin-bottom: 50px;
+        font-size: 18px;
+        width: 80%;
+    }
+
+    .explore-iceland-section img{
+        width: 100%;
+    }
+
+    .iceland-essentials-section{
+        padding: 50px 100px 25px 100px;
+    }
+
+    .-essentials-section h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .what-to-do-section{
+        display: flex;
+    }
+
+    .do-places-text{
+        flex: 1; 
+        max-width: 30%;
+    }
+
+    .do-places-img{
+        flex: 2; 
+        display: flex;
+        margin-left: 50px;
+        gap: 20px;
+        justify-content: center;
+        object-fit: cover;
+    }
+
+    .do-places-text h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .do-places-text h4{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 22px;
+    }
+    
+    .place {
+        width: 90%;
+        border-radius: 30px;
+        background: var(--white, #FFF);
+        box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+        object-fit: cover;
+    }
+
+    .place p{
+            display: inline-block;
+            color: #6C6C6C;
+            padding: 0 15px;
+        }
+
+    .place img {
+        max-width: 100%;
+        height: 250px;
+        border-radius: 30px 30px 0px 0px;
+        object-fit: cover;
+    }
+
+    .what-to-eat-section{
+        display: flex;
+        margin-top: 100px;
+    }
+
+    .eat-places-text{
+        flex: 1; 
+        max-width: 30%;
+    }
+
+    .eat-places-img{
+        flex: 2; 
+        display: flex;
+        margin-left: 50px;
+        gap: 20px;
+        justify-content: center;
+   
+    }
+
+    .eat-places-text h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .eat-places-text h4{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 22px;
+    }
+    
+    .eat-place {
+        width: 80%;
+        border-radius: 30px;
+        background: var(--white, #FFF);
+        box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+                    object-fit: cover;
+    }
+
+    .eat-place p{
+            display: inline-block;
+            color: #6C6C6C;
+            padding: 0 15px;
+        }
+
+    .eat-place img {
+        max-width: 100%;
+        height: auto;
+        height: 250px;
+        border-radius: 30px 30px 0px 0px;
+        object-fit: cover;
+    }
+
+    .destinations-section{
+        padding: 50px 100px 50px 100px;
+        
+    }
+
+    .destinations-section h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .all-destinations{
+        display: flex; 
+        gap: 20px;
+    }
+
+    .destination{
+        display: flex;
+        position: relative;
+        border-radius: 30px;
+        width: 100%;
+        height: 300px;
+    }
+
+    .destination-content{
+        align-self: flex-end;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: white;
+    }
+    
+    .destination:nth-child(1) {
+    background: url('reykjavik.jpg') center/cover;
+    }
+
+    .destination:nth-child(2) {
+    background: url('gullfoss.jpg') center/cover;
+    }
+
+    .destination:nth-child(3) {
+    background: url('jokulsarlon.jpg') center/cover;
+    }
+
+    .destination:nth-child(4) {
+    background: url('nationalpark2.jpg') center/cover;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .explore-iceland-section {
+            padding: 0px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .explore-iceland-section img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .iceland-essentials-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .what-to-do-section {
+            flex-direction: column;
+        }
+
+        .do-places-text {
+            max-width: 100%;
+        }
+
+        .do-places-text h4, .eat-places-text h4 {
+            margin: 0;
+        }
+
+        .do-places-img {
+            flex-direction: column;
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .what-to-eat-section {
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .eat-places-text {
+            max-width: 100%;
+        }
+
+        .eat-places-img {
+            flex-direction: column;
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .destinations-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .all-destinations {
+            flex-direction: column;
+            width: 300px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logotravelwise.png">
+            <h1>Travel Wise</h1>
+        </div>
+
+
+
+        <nav class="nav-list" id="myNav-list">
+            <a class="nav-item" href="#">Smart Search</a>
+            <a class="nav-item" href="#">Destinations</a>
+            <a class="nav-item" href="#">Our Packages</a>
+            <a class="nav-item" href="#">Currency Rates</a>
+            <a class="nav-item" href="#">Budgeting Hacks</a>
+        </nav>
+    </header>
+
+
+    <div class="explore-iceland-section">
+        <h1>Explore: Iceland</h1>
+        <p>Embark on a mesmerizing journey through the enchanting landscapes of Iceland, where nature's wonders unfold
+            in breathtaking displays of glaciers, waterfalls, and geysers. From the vibrant city of Reykjavik to the
+            iconic Gullfoss waterfall, the serene Jokulsarlon glacier lagoon to the historic Thingvellir National Park,
+            each destination is a chapter in Iceland's unique story. Discover the Northern Lights dancing across the
+            Arctic sky and indulge in the warmth of geothermal hot springs. Iceland invites you to explore its
+            otherworldly beauty, where every moment is a testament to the raw power and elegance of nature.</p>
+        <img src="iceland.jpg" alt="Iceland">
+    </div>
+    
+    <div class="iceland-essentials-section">
+        <h2>Iceland Essentials</h2>
+        <div class="what-to-do-section">
+            <div class="do-places-text">
+                <h4>What to do</h4>
+                <p>Discover must-see spots, unique journeys, and signature experiences that define and encapsulate the allure of Iceland.</p>
+            </div>
+            <div class="do-places-img">
+                <div class="place">
+                    <img src="Reykjavik2.jpg" alt="Reykjavik"><br>
+                    <p>Reykjavik</p>
+                    <p>5 stars</p><br>
+                    <p>City</p>
+                </div>
+                <div class="place">
+                    <img src="waterfalls2.jpg" alt="Gullfoss Waterfall"><br>
+                    <p>Gullfoss Waterfall</p>
+                    <p>5 stars</p><br>
+                    <p>Waterfalls
+                    </div>
+                    <div class="place">
+                        <img src="nationapark.jpg" alt="national park Þingvellir"><br>
+                        <p>National Park Þingvellir</p>
+                        <p>5 stars</p><br>
+                        <p>Nature</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="what-to-eat-section">
+                <div class="eat-places-text">
+                    <h4>What to eat</h4>
+                    <p>Experience the flavors of Icelandic cuisine, from fresh seafood to traditional delights, and savor the unique culinary offerings.</p>
+                </div>
+                <div class="eat-places-img">
+                    <div class="eat-place">
+                        <img src="yogurt.jpg" object-fit="cover" alt="Skyr"><br>
+                        <p>Skyr</p>
+                        <p>5 stars</p><br>
+                        <p>Dairy</p>
+                    </div>
+                    <div class="eat-place">
+                        <img src="lamb.jpg" alt="Icelandic Lamb"><br>
+                        <p>Icelandic Lamb</p>
+                        <p>4 stars</p><br>
+                        <p>Meat</p>
+                    </div>
+                    <div class="eat-place">
+                        <img src="bread.jpg" alt="Rúgbrauð"><br>
+                        <p>Rúgbrauð</p>
+                        <p>4 stars</p><br>
+                        <p>Bread</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="destinations-section">
+            <h2>Destinations</h2>
+            <div class="all-destinations">
+                <div class="destination">
+                    <div class="destination-content">
+                        <h4>Reykjavik</h4>
+                    </div>
+                </div>
+                <div class="destination">
+                    <div class="destination-content">
+                        <h4>Gullfoss Waterfall</h4>
+                    </div>
+                </div>
+                <div class="destination">
+                    <div class="destination-content">
+                        <h4>Jokulsarlon Glacier Lagoon</h4>
+                    </div>
+                </div>
+                <div class="destination">
+                    <div class="destination-content">
+                        <h4>National Park Þingvellir</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="subscribe-container">
+                <div class="subscribe-text">
+                    <h2>The TravelWise Newsletter</h2>
+                    <p>Get inspired! Receive travel discounts, tips, and behind-the-scenes stories.</p>
+                </div>
+                <div class="form-container">
+                    <input type="email" class="email-input" placeholder="Your email">
+                    <button type="submit" class="subscribe-button">Subscribe</button>
+                </div>
+            </div>
+            <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
+            <div class="page-links">
+                <a href="#">Home</a>
+                <a href="#">Smart Search</a>
+                <a href="#">Destinations</a>
+                <a href="#">Our Packages</a>
+                <a href="#">Currency Rates</a>
+                <a href="#">Budgeting Hacks</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 TravelWise. All rights reserved.
+            </div>
+        </footer>
+        
+        <script>
+            const menuButton = document.getElementById('menu-button');
+            
+            menuButton.addEventListener('click', function () {
+                this.classList.toggle('active');
+            });
+        </script>
+        
