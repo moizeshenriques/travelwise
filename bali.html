@@ -39,6 +39,11 @@
     .explore-bali-section p{
         margin-bottom: 50px;
         font-size: 18px;
+        width: 80%;
+    }
+
+    .explore-bali-section img{
+        width: 100%;
     }
 
     .bali-essentials-section{
@@ -52,10 +57,162 @@
         font-weight: 700;
     }
 
-    .bali-essentials-section h4{
+    .what-to-do-section{
+        display: flex;
+    }
+
+    .do-places-text{
+        flex: 1; 
+        max-width: 30%;
+    }
+
+    .do-places-img{
+        flex: 2; 
+        display: flex;
+        margin-left: 50px;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .do-places-text h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .do-places-text h4{
         color: #F76A09;
         font-family: Volkhov;
         font-size: 22px;
+    }
+    
+    .place {
+        width: 90%;
+        border-radius: 30px;
+        background: var(--white, #FFF);
+        box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+    }
+
+    .place p{
+            display: inline-block;
+            color: #6C6C6C;
+            padding: 0 15px;
+        }
+
+    .place img {
+        max-width: 100%;
+        height: 250px;
+        border-radius: 30px 30px 0px 0px;
+    }
+
+    .what-to-eat-section{
+        display: flex;
+        margin-top: 100px;
+    }
+
+    .eat-places-text{
+        flex: 1; 
+        max-width: 30%;
+    }
+
+    .eat-places-img{
+        flex: 2; 
+        display: flex;
+        margin-left: 50px;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .eat-places-text h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .eat-places-text h4{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 22px;
+    }
+    
+    .eat-place {
+        width: 80%;
+        border-radius: 30px;
+        background: var(--white, #FFF);
+        box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+    }
+
+    .eat-place p{
+            display: inline-block;
+            color: #6C6C6C;
+            padding: 0 15px;
+        }
+
+    .eat-place img {
+        max-width: 100%;
+        height: 250px;
+        border-radius: 30px 30px 0px 0px;
+    }
+
+    .destinations-section{
+        padding: 50px 100px 50px 100px;
+        
+    }
+
+    .destinations-section h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .all-destinations{
+        display: flex; 
+        gap: 20px;
+    }
+
+    .destination{
+        display: flex;
+        position: relative;
+        border-radius: 30px;
+        width: 100%;
+        height: 300px;
+    }
+
+    .destination-content{
+        align-self: flex-end;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: white;
+    }
+    
+    .destination:nth-child(1) {
+    background: url('images/bali/ubud.jpeg') center/cover;
+    }
+
+    .destination:nth-child(2) {
+    background: url('images/bali/seminyak.jpeg') center/cover;
+    }
+
+    .destination:nth-child(3) {
+    background: url('images/bali/kuta.jpeg') center/cover;
+    }
+
+    .destination:nth-child(4) {
+    background: url('images/bali/nusadua.jpeg') center/cover;
     }
 
     @media screen and (max-width: 600px) {
@@ -63,7 +220,7 @@
             padding: 20px;
             text-align: center;
         }
-        
+
         .explore-bali-section img {
             width: 100%;
             border-radius: 10px;
@@ -110,34 +267,89 @@
         <img src="images/bali/explorebali.png" alt="Bali">
     </div>
 
+   
     <div class="bali-essentials-section">
         <h2>Bali Essentials</h2>
-        <div class ="bali-essentials-text">
-            <h4>What to do</h4>
-            <p>Discover must-see spots, unique journeys, and signature experiences that define the island's allure.</p>
+        <div class="what-to-do-section">
+            <div class ="do-places-text">
+                <h4>What to do</h4>
+                <p>Discover must-see spots, unique journeys, and signature experiences that define the island's allure.</p>
+            </div>
+            <div class ="do-places-img">
+                <div class = "place">
+                    <img src="images/bali/tanahlot.jpeg" alt="Tanah Lot">
+                    <p>Tanah Lot</p>
+                    <p>4 stars</p><br>
+                    <p>Religious Sites, Landmarks</p>
+                </div>
+                <div class = "place">
+                    <img src="images/bali/purabratan.jpg" alt="Pura Bratan">
+                    <p>Pura Bratan</p>
+                    <p>5 stars</p><br>
+                    <p>Religious Sites, Landmarks</p>
+                </div>
+                <div class = "place">
+                    <img src="images/bali/kelingking.jpg" alt="kelingking Beach">
+                    <p>Kelingking Beach</p>
+                    <p>5 stars</p><br>
+                    <p>Beaches</p>
+                </div>
+            </div> 
         </div>
-        <div class ="bali-essentials-img">
-            <div class = "bali-essential">
-                <img src="images/bali/tanahlot.jpeg" alt="Tanah Lot">
-                <p>Tanah Lot</p>
-                <p>4</p>
-                <p>Religious Sites, Landmarks</p>
+
+        <div class="what-to-eat-section">
+            <div class ="eat-places-text">
+                <h4>What to eat</h4>
+                <p>Explore the classics, embrace local favorites, and uncover hidden gems</p>
             </div>
-            <div class = "bali-essential">
-                <img src="images/bali/purabratan.jpeg" alt="Pura Bratan">
-                <p>Pura Bratan</p>
-                <p>5</p>
-                <p>Religious Sites, Landmarks</p>
-            </div>
-            <div class = "bali-essential">
-                <img src="images/bali/kelingkingbeach.jpeg" alt="kelingking Beach">
-                <p>Kelingking Beach</p>
-                <p>5</p>
-                <p>Beaches</p>
-            </div>
-        </div> 
+            <div class ="eat-places-img">
+                <div class = "eat-place">
+                    <img src="images/bali/sunsunwarung.jpg" alt="Sun Sun Warung">
+                    <p>Sun Sun Warung</p>
+                    <p>5 stars</p><br>
+                    <p>Healthy, Grill</p>
+                </div>
+                <div class = "eat-place">
+                    <img src="images/bali/tanahliat.jpg" alt="Tanah Liat">
+                    <p>Tanah Liat</p>
+                    <p>5 stars</p><br>
+                    <p>Fine Dining</p>
+                </div>
+                <div class = "eat-place">
+                    <img src="images/bali/kaukau.jpg" alt="Kau Kau">
+                    <p>Kau Kau</p>
+                    <p>4 stars</p><br>
+                    <p>Fusion, Seafood</p>
+                </div>
+            </div> 
+        </div>  
     </div>
 
+    <div class="destinations-section">
+        <h2>Destinations</h2>
+        <div class="all-destinations">
+            <div class="destination">
+                <div class="destination-content">
+                    <h4>Ubud</h4>
+                </div>
+            </div>
+            <div class="destination">
+                <div class="destination-content">
+                    <h4>Seminyak</h4>
+                </div>
+            </div>
+            <div class="destination">
+                <div class ="destination-content">
+                    <h4>Kuta</h4>
+                </div>
+            </div>
+            <div class="destination">
+                <div class ="destination-content">
+                    <h4>Nusa Dua</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <footer>
