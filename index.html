@@ -259,6 +259,85 @@
             color: white;
         }
 
+        @media screen and (max-width: 600px) {
+            .intro-section {
+                flex-direction: column;
+            }
+
+            .intro-text {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .intro-section h5, .intro-section p {
+                margin-left: 0;
+            }
+
+            .intro-section h1 {
+                margin-left: 0;
+                font-size: 35px;
+            }
+
+            .intro-section button {
+                margin: 0;
+                margin-top: 1rem;
+            }
+
+            .intro-section img {
+                max-width: 100%;
+                margin-top: 0;
+            }
+            
+            .works-section {
+                padding: 0;
+            }
+
+            .works-allsteps {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .works-steps {
+                width: 95%;
+            }
+
+            .all-destinations {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .destination {
+                width: 90%;
+            }
+
+            .testimonials-section {
+                flex-direction: column;
+                padding: 0;
+                margin-left: 0;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .testimonial-heading {
+                width: 100%;
+            }
+
+            .testimonial-entry {
+                width: 90%;
+                margin-bottom: 1rem;
+            }
+
+            .testimonial-entry img {
+                margin-left: 0;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -363,7 +442,6 @@
             </div>  
         </div>
 
-        <br><br>
         <div class="testimonial-entry">
             <img src="images/home/manheadshot.png" alt="Man">
             <div class="testimonial-text">

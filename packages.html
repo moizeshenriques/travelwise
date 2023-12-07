@@ -158,6 +158,56 @@
             background-color: #f9ad77;
         }
 
+        @media screen and (max-width: 600px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .left-section {
+                width: 100%;
+                padding: 0;
+                text-align: center;
+            }
+
+            .left-section h1 {
+                margin-left: 0;
+                white-space: normal;
+                font-size: 35px;
+            }
+
+            .left-section p {
+                margin-left: 0;
+                font-size: 18px;
+            }
+
+            .button {
+                margin: 0;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .right-section {
+                width: 100%;
+                padding: 0;
+            }
+
+            .right-section img {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+            }
+
+            .packages-section {
+                padding: 20px;
+            }
+
+            .packages-table {
+                
+            }
+        }
+
 
     </style>
 </head>
@@ -168,6 +218,13 @@
             <img src="logotravelwise.png" alt="Travel Wise Logo">
             <h1>Travel Wise</h1>
         </div>
+
+        <button id="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+
         <nav class="nav-list" id="myNav-list">
             <a class="nav-item" href="#">Smart Search</a>
             <a class="nav-item" href="#">Destinations</a>
@@ -283,3 +340,11 @@
             &copy; 2023 TravelWise. All rights reserved.
         </div>
     </footer>
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        
+        menuButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
