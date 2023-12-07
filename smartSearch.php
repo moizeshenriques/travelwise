@@ -3,9 +3,10 @@
 <meta charset="utf-8">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
 <link href='https://fonts.googleapis.com/css?family=Poppins'>
+<link rel="stylesheet" href="styles.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -195,16 +196,111 @@ form {
     margin-right: 50px;
 }
 
+@media screen and (max-width: 600px) {
+    .logo {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .logo img {
+        width: 50%;
+    }
+
+    .logo h1 {
+        font-size: 0;
+    }
+
+    #smart-search-title {
+        text-align: center;
+    }
+
+    #smart-search-title h1 {
+        margin-left: 0;
+    }
+
+    .smart-form-container {
+        margin-left: 0;
+    }
+
+    .smart-form {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #travelBudget, #numDays, #numTravelers, #submitButton {
+        margin-left: 0;
+    }
+
+    .luggage-pic {
+        margin: 1rem;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .subscribe-container {
+        margin-left: 0;
+    }
+
+    .form-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .email-input {
+        text-align: center;
+    }
+
+    .logo-small {
+        width: 30%;
+        margin: 0;
+        margin-top: 30px;
+    }
+
+    .page-links {
+        margin: 0;
+        align-items: center;
+        margin-top: 30px
+    }
+
+    .copyright {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
 </style>
 <header>
     <div class="logo">
         <img src="logotravelwise.png">
     </div>
-    <nav>
-        <a href="#">Smart Search</a>
-        <a href="#">Destinations</a>
-        <a href="#">Currency Rates</a>
-        <a href="#">Budgeting Hacks</a>
+
+    <button id="menu-button">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+
+    <nav class="nav-list" id="myNav-list">
+        <a class="nav-item" href="#">Smart Search</a>
+        <a class="nav-item" href="#">Destinations</a>
+        <a class="nav-item" href="#">Our Packages</a>
+        <a class="nav-item" href="#">Currency Rates</a>
+        <a class="nav-item" href="#">Budgeting Hacks</a>
     </nav>
 </header>
 <section id="smart-search-section">
@@ -247,8 +343,10 @@ form {
         </div>
         <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
         <div class="page-links">
+            <a href="#">Home</a>
             <a href="#">Smart Search</a>
             <a href="#">Destinations</a>
+            <a href="#">Our Packages</a>
             <a href="#">Currency Rates</a>
             <a href="#">Budgeting Hacks</a>
         </div>
@@ -257,6 +355,13 @@ form {
         </div>
     </footer>
 
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        
+        menuButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
     </body>
 
 
