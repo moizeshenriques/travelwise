@@ -20,13 +20,12 @@
                     emailInput.value = ''; // Clear the email input
                 }
             });
+
+            function scrollToPackages() {
+                const packagesSection = document.getElementById('packages-section');
+                packagesSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
-
-    function scrollToPackages() {
-    const packagesSection = document.getElementById('packages-section');
-    packagesSection.scrollIntoView({ behavior: 'smooth' });
-}
-
 
     </script>
     <style>
@@ -93,6 +92,7 @@
             font-family: 'Poppins', sans-serif;
             margin-left: 100px;
             margin-top: 30px;
+            text-decoration: none;
         }
 
         .packages-section {
@@ -151,7 +151,9 @@
             font-size: 14px;
             border-radius: 4px;
             cursor: pointer;
+            white-space: nowrap;
             font-family: 'Poppins', sans-serif;
+            text-decoration: none;
         }
 
         .package-signup-button:hover {
@@ -238,7 +240,7 @@
         <div class="left-section">
             <h1>TravelWise Packages</h1>
             <p>
-                Say goodbye to generic travel plans. Our team of experienced travel agents will work closely with you to create a personalized itinerary tailored to your preferences and interests. Explore all of our affordable package options and choose the one that fits your needs and budget! Check out our options:
+                Say goodbye to generic travel plans. Our team of experienced travel agents will work with you to create a personalized itinerary tailored to your preferences. <strong>The first consultation with a TravelWise agent is free!</strong> Explore all of our affordable package options and choose the one that fits your needs and budget:
             </p>
             <p>1. Premium Package - Best Value!</p>
             <p>2. Intermediate Package </p>
@@ -266,7 +268,7 @@
             <tbody>
                 <tr>
                     <td>Premium Package <br> Best Value!</td>
-                    <td>$200 one-time payment</td>
+                    <td><strong>First consultation is free</strong>, then $200 one-time payment</td>
                     <td>
                         <ul>
                             <li>• Full-Service Concierge</li>
@@ -278,10 +280,10 @@
                             <li>• Customized travel packages for special occasions</li>
                         </ul>
                     </td>
-                    <td><button class="package-signup-button">Sign Up</button></td>
+                    <td><a href="https://moizeshenriques.github.io/travelwise/sign-up.html" class="package-signup-button">Sign Up</a></td>
                 <tr>
                     <td>Intermediate Package</td>
-                    <td>$150 one-time payment</td>
+                    <td><strong>First consultation is free</strong>, then $150 one-time payment</td>
                     <td>
                         <ul>
                             <li>• Itinerary Planning and Booking Assistance</li>
@@ -293,11 +295,11 @@
                             <li>• Assistance with visa and travel documentation</li>
                         </ul>
                     </td>
-                    <td><button class="package-signup-button">Sign Up</button></td>
+                    <td><a href="https://moizeshenriques.github.io/travelwise/sign-up.html" class="package-signup-button">Sign Up</a></td>
                 </tr>
                 <tr>
                     <td>Basic Package</td>
-                    <td>$100 one-time payment</td>
+                    <td><strong>First consultation is free</strong>, then $150 one-time payment</td>
                     <td>
                         <ul>
                             <li>• Budget-Focused Assistance</li>
@@ -309,7 +311,7 @@
                             <li>• Regular updates on budget travel trends</li>
                         </ul>
                     </td>
-                    <td><button class="package-signup-button">Sign Up</button></td>
+                    <td><a href="https://moizeshenriques.github.io/travelwise/sign-up.html" class="package-signup-button">Sign Up</a></td>
                 </tr>
             </tbody>
         </table>
@@ -340,6 +342,7 @@
             &copy; 2023 TravelWise. All rights reserved.
         </div>
     </footer>
+<<<<<<< HEAD
     <script>
         const menuButton = document.getElementById('menu-button');
         
@@ -348,3 +351,13 @@
         });
     </script>
 </body>
+=======
+    <script> function scrollToPackages() {
+    console.log("Scrolling to packages section");
+    const packagesSection = document.getElementById('packages-section');
+    packagesSection.scrollIntoView({ behavior: 'smooth' });
+}
+    </script>
+    </body>
+</html>
+>>>>>>> refs/remotes/origin/main
