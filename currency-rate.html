@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
-        d        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function () {
         const subscribeButton = document.querySelector('.subscribe-button');
         const emailInput = document.querySelector('.email-input');
 
@@ -240,7 +240,7 @@
         display: block;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 900px) {
         .content {
             padding: 0;
             flex-direction: column;
@@ -256,13 +256,14 @@
 
         .left-section h1 {
             white-space: unset;
-            font-size: 50px;
+            font-size: 42px;
             text-align: center;
             margin-left: 0;
         }
 
         .left-section p {
             text-align: center;
+            font-size: 18px;
             margin-left: 0;
         }
 
@@ -271,10 +272,14 @@
             margin: 20px auto 2rem;
         }
 
+        .right-section {
+            width: 100%;
+        }
+
         .right-section img {
-        width: 80%; 
-        height: auto; 
-        margin-left: 30px;
+            width: 80%; 
+            height: auto; 
+            margin: 0;
         }
 
         .currency-calculator {

@@ -144,7 +144,7 @@ footer {
     transition: 0.4s;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     header {
         flex-direction: column;
     }
@@ -155,7 +155,7 @@ footer {
     }
 
     .logo img {
-        width: 50%;
+        width: 40%;
         margin: 0;
     }
 
