@@ -42,9 +42,6 @@
     </script>
     
     <style>
-      a {
-        display: block;
-      }
         .intro-section{
             display: flex;
         }
@@ -431,28 +428,49 @@
         <h5>EXPLORE</h5>
         <h2>Top Destinations</h2>
         <div class="all-destinations">
-            <a  class="destination" href="bali.html">
-            <div>
+            <div class="destination">
+                <div id="baliDest">
                 <img src="images/home/bali1.png" alt="Bali">
                 <p>Bali</p>
                 <p><b>$76/day</b></p><br>
-                <p class="days">10 Days Trip</p>
+                <p>10 Days Trip</p>
+                </div>
             </div>
-            </a>
             <div class="destination">
+                <div id="icelandDest">
                 <img src="images/home/iceland1.png" alt="Iceland">
                 <p>Iceland</p>
                 <p><b>$293/day</b></p><br>
                 <p>9 Days Trip</p>
+                </div>
             </div>
             <div class="destination">
+                <div id="japanDest">
                 <img src="images/home/japan1.png" alt="Japan">
                 <p>Japan</p>
                 <p><b>$125/day</b></p><br>
                 <p>7 Days Trip</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+      const baliDiv = document.getElementById('baliDest');
+      baliDiv.addEventListener('click', function () {
+            location.href = "bali.html";            
+      });
+
+      const icelandDiv = document.getElementById('icelandDest');
+          baliDiv.addEventListener('click', function () {
+            location.href = "iceland.html";            
+      });
+
+      const japanDiv = document.getElementById('japanDest');
+          baliDiv.addEventListener('click', function () {
+            location.href = "japan.html";            
+      });
+    </script>
   
     <div class="testimonials-section">
         <div class="testimonial-heading">
