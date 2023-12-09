@@ -121,6 +121,7 @@
                             0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
                             0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
             text-align: left;
+            overflow-x: auto;
         }
 
 
@@ -161,6 +162,23 @@
         }
 
         @media screen and (max-width: 600px) {
+            
+        .packages-table {
+            display: block;
+            width: auto;
+        }
+
+        .packages-table th,
+        .packages-table td {
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        .packages-table th {
+            text-align: center;
+        }
+
             .content {
                 flex-direction: column;
             }
