@@ -5,6 +5,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet"> 
+<script>
+	        document.addEventListener('DOMContentLoaded', function () {
+        const subscribeButton = document.querySelector('.subscribe-button');
+        const emailInput = document.querySelector('.email-input');
+
+        subscribeButton.addEventListener('click', function () {
+            // Email validation using regular expression
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isEmailValid = emailPattern.test(emailInput.value);
+
+            if (!isEmailValid) {
+                alert('Please enter a valid email address.');
+            } else {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = ''; // Clear the email input
+            }
+        });
+    });
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
