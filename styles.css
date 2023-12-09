@@ -156,6 +156,7 @@ footer {
 
     .logo img {
         width: 50%;
+        margin: 0;
     }
 
     .logo h1 {
