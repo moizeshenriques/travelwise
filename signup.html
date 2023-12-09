@@ -22,6 +22,147 @@
                 });
             });
     </script>
+    <style>
+            .subscribe-container {
+        margin-left: 0;
+    }
+
+    .form-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .email-input {
+        text-align: center;
+    }
+
+    .logo-small {
+        width: 30%;
+        margin: 0;
+        margin-top: 30px;
+    }
+
+    .page-links {
+        margin: 0;
+        align-items: center;
+        margin-top: 30px
+    }
+
+    .copyright {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+                .content {
+            display: flex;
+            padding: 20px;
+        }
+        
+        .signup-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #5842A3;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            color: #333;
+            justify-content: left;
+            align-items: left;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: 'Poppins';
+        }
+
+        button {
+            width: 50%;
+            margin-left: 150px;
+            margin-top: 20px;
+            align-items: center;
+            background: #F76A09;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-size: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover {
+            background-color: #f9ad77;
+        }
+
+        @media screen and (max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+
+            .logo {
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+
+            .logo img {
+                width: 50%;
+                margin: 0;
+            }
+
+            .logo h1 {
+                font-size: 0;
+            }
+
+            #menu-button {
+                display: block;
+                width: 100%;
+                margin-left: 0; 
+                margin-top: 0;
+                flex-direction: column;
+            }
+
+            #myNav-list {
+                display: none;
+            }
+
+            #menu-button.active + #myNav-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            #signup-form button {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .subscribe-button {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -44,6 +185,37 @@
             <a class="nav-item" href="#">Budgeting Hacks</a>
         </nav>
     </header>
+    
+        <div class="signup-container">
+        <h2>Sign Up for Travel Wise Packages</h2>
+        <p>The first consultation is <strong>free and non-binding</strong>. Select a package and the best time to meet with our agents! Please expect 1-2 business days to be contacted by a TravelWise agent to schedule your intial cosultation.</p>
+        <form id="signup-form">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+
+            <label for="first-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="phone" id="phone" name="phone" required>
+
+            <label for="package">Select Package of Interest:</label>
+            <select id="package" name="package" required>
+                <option value="premium">Premium Package</option>
+                <option value="intermediate">Intermediate Package</option>
+                <option value="basic">Basic Package</option>
+            </select>
+
+            <label for="meeting-time">Select the best time to meet:</label>
+            <input type="datetime-local" id="meeting-time" name="meeting-time" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    
     <div id="content-container">
         <h1>Sign-up for TravelWise!</h1>
         first name last name email phone number 
