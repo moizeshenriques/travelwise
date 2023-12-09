@@ -9,18 +9,22 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const subscribeButton = document.querySelector('.subscribe-button');
-            const emailInput = document.querySelector('.email-input');
-        
-            subscribeButton.addEventListener('click', function () {
-                if (emailInput.value.trim() === '') {
-                    alert('Please enter your email address.');
-                } else {
-                    alert('Thank you for subscribing to our newsletter!');
-                    emailInput.value = ''; // Clear the email input
-                }
-            });
+        const subscribeButton = document.querySelector('.subscribe-button');
+        const emailInput = document.querySelector('.email-input');
+
+        subscribeButton.addEventListener('click', function () {
+            // Email validation using regular expression
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isEmailValid = emailPattern.test(emailInput.value);
+
+            if (!isEmailValid) {
+                alert('Please enter a valid email address.');
+            } else {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = ''; // Clear the email input
+            }
         });
+    });
     </script>
     
     <style>
