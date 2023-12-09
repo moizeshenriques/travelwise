@@ -9,18 +9,22 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const subscribeButton = document.querySelector('.subscribe-button');
-            const emailInput = document.querySelector('.email-input');
-        
-            subscribeButton.addEventListener('click', function () {
-                if (emailInput.value.trim() === '') {
-                    alert('Please enter your email address.');
-                } else {
-                    alert('Thank you for subscribing to our newsletter!');
-                    emailInput.value = ''; // Clear the email input
-                }
-            });
+        const subscribeButton = document.querySelector('.subscribe-button');
+        const emailInput = document.querySelector('.email-input');
+
+        subscribeButton.addEventListener('click', function () {
+            // Email validation using regular expression
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isEmailValid = emailPattern.test(emailInput.value);
+
+            if (!isEmailValid) {
+                alert('Please enter a valid email address.');
+            } else {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = ''; // Clear the email input
+            }
         });
+    });
 
         $(document).ready(function () {
         $('.intro-section').click();
@@ -405,27 +409,29 @@
         <h5>EXPLORE</h5>
         <h2>Top Destinations</h2>
         <div class="all-destinations">
+            <a href="bali.html">
             <div class="destination">
-                <img src="images/home/Vietnam.jpeg" alt="Vietnam">
-                <p>Vietnam</p>
-                <p><b>$35/day</b></p><br>
+                <img src="images/home/bali1.png" alt="Bali">
+                <p>Bali</p>
+                <p><b>$76/day</b></p><br>
                 <p>10 Days Trip</p>
             </div>
+            </a>
             <div class="destination">
-                <img src="images/home/Srilanka.jpeg" alt="Sri Lanka">
-                <p>Sri Lanka</p>
-                <p><b>$35/day</b></p><br>
+                <img src="images/home/iceland1.png" alt="Iceland">
+                <p>Iceland</p>
+                <p><b>$293/day</b></p><br>
                 <p>9 Days Trip</p>
             </div>
             <div class="destination">
-                <img src="images/home/Georgia.jpeg" alt="Georgia">
-                <p>Georgia</p>
-                <p><b>$30/day</b></p><br>
+                <img src="images/home/japan1.png" alt="Japan">
+                <p>Japan</p>
+                <p><b>$125/day</b></p><br>
                 <p>7 Days Trip</p>
             </div>
         </div>
     </div>
-
+  
     <div class="testimonials-section">
         <div class="testimonial-heading">
             <h5>TESTIMONIALS</h5>

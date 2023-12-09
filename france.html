@@ -9,23 +9,28 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const subscribeButton = document.querySelector('.subscribe-button');
-            const emailInput = document.querySelector('.email-input');
-        
-            subscribeButton.addEventListener('click', function () {
-                if (emailInput.value.trim() === '') {
-                    alert('Please enter your email address.');
-                } else {
-                    alert('Thank you for subscribing to our newsletter!');
-                    emailInput.value = ''; // Clear the email input
-                }
-            });
+        const subscribeButton = document.querySelector('.subscribe-button');
+        const emailInput = document.querySelector('.email-input');
+
+        subscribeButton.addEventListener('click', function () {
+            // Email validation using regular expression
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isEmailValid = emailPattern.test(emailInput.value);
+
+            if (!isEmailValid) {
+                alert('Please enter a valid email address.');
+            } else {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = ''; // Clear the email input
+            }
         });
+    });
     </script>
     
     <style>
     .explore-france-section{
         padding: 50px 100px 25px 100px;
+        color: #6C6C6C;
     }
 
     .explore-france-section h1{
@@ -59,6 +64,7 @@
 
     .what-to-do-section{
         display: flex;
+        color: #6C6C6C;
     }
 
     .do-places-text{
@@ -72,6 +78,7 @@
         margin-left: 50px;
         gap: 20px;
         justify-content: center;
+        object-fit: cover;
     }
 
     .do-places-text h2{
@@ -97,6 +104,7 @@
                     0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
                     0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
                     0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+        object-fit: cover;
     }
 
     .place p{
@@ -109,11 +117,13 @@
         max-width: 100%;
         height: 250px;
         border-radius: 30px 30px 0px 0px;
+        object-fit: cover;
     }
 
     .what-to-eat-section{
         display: flex;
         margin-top: 100px;
+        color: #6C6C6C;
     }
 
     .eat-places-text{
@@ -127,6 +137,7 @@
         margin-left: 50px;
         gap: 20px;
         justify-content: center;
+        object-fit: cover;
     }
 
     .eat-places-text h2{
@@ -152,6 +163,7 @@
                     0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
                     0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
                     0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+        object-fit: cover;
     }
 
     .eat-place p{
@@ -190,6 +202,15 @@
         border-radius: 30px;
         width: 100%;
         height: 300px;
+    }
+
+    .destination h4{
+            box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
     }
 
     .destination-content{
@@ -334,19 +355,19 @@
             <div class ="do-places-img">
                 <div class = "place">
                     <img src="images/france/eiffeltower.jpg" alt="Eiffel Tower"><br>
-                    <p>Eiffel Tower</p>
+                    <p>Eiffel Tower</p><br>
                     <p>5 stars</p><br>
                     <p>Landmarks</p>
                 </div>
                 <div class = "place">
                     <img src="images/france/museedorsay.jpg" alt="Musée d'Orsay"><br>
-                    <p>Musée d'Orsay</p>
+                    <p>Musée d'Orsay</p><br>
                     <p>5 stars</p><br>
                     <p>Landmarks, Museum</p>
                 </div>
                 <div class = "place">
                     <img src="images/france/louvre.jpg" alt="Louvre"><br>
-                    <p>Louvre</p>
+                    <p>Louvre</p><br>
                     <p>5 stars</p><br>
                     <p>Landmarks, Museum</p>
                 </div>
@@ -361,19 +382,19 @@
             <div class ="eat-places-img">
                 <div class = "eat-place">
                     <img src="images/france/lerelais.jpg" alt="Le relais de l'entrecote"><br>
-                    <p>Le relais de l'entrecote</p>
+                    <p>Le relais de l'entrecote</p><br>
                     <p>5 stars</p><br>
                     <p>French</p>
                 </div>
                 <div class = "eat-place">
                     <img src="images/france/feuillette.jpg" alt="Boulangerie Feuillette"><br>
-                    <p>Boulangerie Feuillette</p>
+                    <p>Boulangerie Feuillette</p><br>
                     <p>5 stars</p><br>
                     <p>Bakery</p>
                 </div>
                 <div class = "eat-place">
                     <img src="images/france/le428.jpg" alt="Le 428"><br>
-                    <p>Le 428</p>
+                    <p>Le 428</p><br>
                     <p>4 stars</p><br>
                     <p>French</p>
                 </div>

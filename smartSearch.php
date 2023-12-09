@@ -7,6 +7,25 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
 <link href='https://fonts.googleapis.com/css?family=Poppins'>
 <link rel="stylesheet" href="styles.css">
+<script>
+            document.addEventListener('DOMContentLoaded', function () {
+        const subscribeButton = document.querySelector('.subscribe-button');
+        const emailInput = document.querySelector('.email-input');
+
+        subscribeButton.addEventListener('click', function () {
+            // Email validation using regular expression
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isEmailValid = emailPattern.test(emailInput.value);
+
+            if (!isEmailValid) {
+                alert('Please enter a valid email address.');
+            } else {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = ''; // Clear the email input
+            }
+        });
+    });
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -281,9 +300,32 @@ form {
         margin-left: 0;
         margin-top: 10px;
     }
+    .filter-container {
+        display: block;
+        margin-left: 5%;
+        float: left;
+    }
+    
+    .filter-form-drop {
+        width: 250px;
+        height: 50px;
+        border: 2px solid rgba(0, 0, 0, 0.40);
+        flex-shrink: 0;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: #1E1D4C;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-radius: 20px;
+        text-align: center;
+    }
 }
 
 </style>
+    
 <header>
     <div class="logo">
         <img src="logotravelwise.png">
@@ -322,6 +364,20 @@ form {
         <input type="number" id="travelBudget" name = "travelBudget" placeholder="Total Travel Budget" min="1" required><br><br>
         <input type="number" id="numDays" name = "numDays" placeholder="Number of days" min="1" required><br><br>
         <input type="number" id="numTravelers" name="numTravelers" placeholder="Number of travelers" min="1" required><br><br>
+
+        <h2>Filter By</h2>
+        <select name="dropDown" class="filter-form-drop" id = "dropDown" name="dropDown" placeholder="Choose a filter" required>
+            <option value="" disabled selected>Select a filter</option>
+            <option value = "Default">No filter</option>
+            <option value = "Alphabetical">Alphabetical</option>
+            <option value = "Price">Price (ascending)</option>
+            <option value = "Adventure">Adventure escapes</option>
+            <option value = "City">City explorations</option>
+            <option value = "Relaxation">Relaxation retreats</option>
+            <option value = "Family">Family fun</option>
+            <option value = "Culture">Cultural journey</option>
+            <option value = "Rating">TravelWise rating</option><br>
+        </select>
         <input type="submit" id="submitButton" value="Search">
     </form>
         </div>
