@@ -25,7 +25,7 @@
                 emailInput.value = ''; // Clear the email input
             }
         });
-    });
+        });
 
             const signupForm = document.getElementById('signup-form');
             signupForm.addEventListener('submit', function (event) {
@@ -51,7 +51,6 @@
 
                 return true;
             }
-        });
     </script>
     <style>
     
@@ -63,7 +62,10 @@
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         color: #6C6C6C;
-            
+    }
+
+    .signup-container h2 {
+        color: #5842A3;
     }
     
     #signup-form {
@@ -73,7 +75,6 @@
 
     .signup-container label {
         margin-top: 10px;
-        color: #6C6C6C;
         justify-content: left;
         align-items: left;
             
@@ -109,6 +110,14 @@
 
     .signup-container button:hover {
         background-color: #f9ad77;
+    }
+
+    @media screen and (max-width: 900px) {
+        .signup-container button {
+            margin: 0;
+            margin-top: 1rem;
+            align-self: center;
+        }
     }
 
     </style>
