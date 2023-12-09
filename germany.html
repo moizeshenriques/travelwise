@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="germany, what do in germany, travel, international travel, travel budget calculator, currency rates, budgeting, cheap destinations, travel packages">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+                document.addEventListener('DOMContentLoaded', function () {
+        const subscribeButton = document.querySelector('.subscribe-button');
+        const emailInput = document.querySelector('.email-input');
+
+        subscribeButton.addEventListener('click', function () {
+            // Email validation using regular expression
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isEmailValid = emailPattern.test(emailInput.value);
+
+            if (!isEmailValid) {
+                alert('Please enter a valid email address.');
+            } else {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = ''; // Clear the email input
+            }
+        });
+    });
+    </script>
+    
+    <style>
+    .explore-germany-section{
+        padding: 50px 100px 25px 100px;
+        color: #6C6C6C;
+    }
+
+    .explore-germany-section h1{
+        color: #5842A3;
+        font-family: Volkhov;
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: -2px;
+    }
+
+    .explore-germany-section p{
+        margin-bottom: 50px;
+        font-size: 18px;
+        width: 80%;
+    }
+
+    .explore-germany-section img{
+        width: 100%;
+    }
+
+    .germany-essentials-section{
+        padding: 50px 100px 25px 100px;
+    }
+
+    .germany-essentials-section h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .what-to-do-section{
+        display: flex;
+        color: #6C6C6C;
+    }
+
+    .do-places-text{
+        flex: 1; 
+        max-width: 30%;
+    }
+
+    .do-places-img{
+        flex: 2; 
+        display: flex;
+        margin-left: 50px;
+        gap: 20px;
+        justify-content: center;
+        object-fit: cover;
+    }
+
+    .do-places-text h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .do-places-text h4{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 22px;
+    }
+    
+    .place {
+        width: 90%;
+        border-radius: 30px;
+        background: var(--white, #FFF);
+        box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+        object-fit: cover;
+    }
+
+    .place p{
+            display: inline-block;
+            color: #6C6C6C;
+            padding: 0 15px;
+        }
+
+    .place img {
+        max-width: 100%;
+        height: 250px;
+        border-radius: 30px 30px 0px 0px;
+        object-fit: cover;
+    }
+
+    .what-to-eat-section{
+        display: flex;
+        margin-top: 100px;
+        color: #6C6C6C;
+    }
+
+    .eat-places-text{
+        flex: 1; 
+        max-width: 30%;
+    }
+
+    .eat-places-img{
+        flex: 2; 
+        display: flex;
+        margin-left: 50px;
+        gap: 20px;
+        justify-content: center;
+        object-fit: cover;
+    }
+
+    .eat-places-text h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .eat-places-text h4{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 22px;
+    }
+    
+    .eat-place {
+        width: 80%;
+        border-radius: 30px;
+        background: var(--white, #FFF);
+        box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+        object-fit: cover;
+    }
+
+    .eat-place p{
+            display: inline-block;
+            color: #6C6C6C;
+            padding: 0 15px;
+        }
+
+    .eat-place img {
+        max-width: 100%;
+        height: 250px;
+        border-radius: 30px 30px 0px 0px;
+    }
+
+    .destinations-section{
+        padding: 50px 100px 50px 100px;
+        
+    }
+
+    .destinations-section h2{
+        color: #F76A09;
+        font-family: Volkhov;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .all-destinations{
+        display: flex; 
+        gap: 20px;
+    }
+
+    .destination{
+        display: flex;
+        position: relative;
+        border-radius: 30px;
+        width: 100%;
+        height: 300px;
+    }
+
+    .destination h4{
+            box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                    0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                    0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                    0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                    0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                    0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+    }
+
+    .destination-content{
+        align-self: flex-end;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: white;
+    }
+    
+    .destination:nth-child(1) {
+    background: url('berlin.png') center/cover;
+    }
+
+    .destination:nth-child(2) {
+    background: url('munich.png') center/cover;
+    }
+
+    .destination:nth-child(3) {
+    background: url('cologne.png') center/cover;
+    }
+
+    .destination:nth-child(4) {
+    background: url('valley.png') center/cover;
+    }
+
+    @media screen and (max-width: 900px) {
+
+        .explore-germany-section {
+            padding: 0px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .explore-germany-section img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .germany-essentials-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .what-to-do-section {
+            flex-direction: column;
+        }
+
+        .do-places-text {
+            max-width: 100%;
+        }
+
+        .do-places-text h4, .eat-places-text h4 {
+            margin: 0;
+        }
+
+        .do-places-img {
+            flex-direction: column;
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .what-to-eat-section {
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .eat-places-text {
+            max-width: 100%;
+        }
+
+        .eat-places-img {
+            flex-direction: column;
+            margin-left: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .destinations-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .all-destinations {
+            flex-direction: column;
+            width: 300px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logotravelwise.png">
+            <h1>Travel Wise</h1>
+        </div>
+
+        <button id="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+
+        <nav class="nav-list" id="myNav-list">
+            <a class="nav-item" href="#">Smart Search</a>
+            <a class="nav-item" href="#">Destinations</a>
+            <a class="nav-item" href="#">Our Packages</a>
+            <a class="nav-item" href="#">Currency Rates</a>
+            <a class="nav-item" href="#">Budgeting Hacks</a>
+        </nav>
+    </header>
+
+
+    <div class="explore-germany-section">
+        <h1>Explore: Germany</h1>
+        <p>Embark on a delightful journey through the rich tapestry of Germany, where history, culture, and scenic beauty
+            come together to create a fascinating experience. Discover the medieval charm of Rothenburg, explore the iconic
+            Neuschwanstein Castle, and wander through the vibrant streets of Berlin. Germany's diverse landscapes, from the
+            picturesque Bavarian Alps to the enchanting Rhine Valley, offer a perfect blend of natural wonders and architectural
+            marvels. Indulge in the warmth of German hospitality, savor traditional cuisines, and immerse yourself in the arts
+            and music scene. From historic cities to charming villages, Germany invites you to explore a world of cultural
+            treasures and breathtaking landscapes.</p>
+        <img src="images/germany/germany.jpg" alt="Germany">
+    </div>
+    
+
+   
+    <div class="germany-essentials-section">
+        <h2>Germany Essentials</h2>
+        <div class="what-to-do-section">
+            <div class ="do-places-text">
+                <h4>What to do</h4>
+                <p>Germany offers a diverse range of activities, from exploring historic castles and vibrant cities to enjoying scenic landscapes, world-class museums, and traditional festivals.</p>
+            </div>
+            <div class ="do-places-img">
+                <div class = "place">
+                    <img src="neucastle.png" alt="Neuschwanstein">
+                    <p>Neuschwanstein Castle</p>
+                    <p>5 stars</p><br>
+                    <p>Landmarks</p>
+                </div>
+                <div class = "place">
+                    <img src="rothenburg.png" alt="Rothenburg">
+                    <p>Rothenburg ob der Tauber</p>
+                    <p>5 stars</p><br>
+                    <p>Architecture, Historic Site</p>
+                </div>
+                <div class = "place">
+                    <img src="stpeter.png" alt="St. Peters">
+                    <p>St. Peter's Cathedral</p>
+                    <p>4 stars</p><br>
+                    <p>Religious Sites, Landmarks</p>
+                </div>
+            </div> 
+        </div>
+
+        <div class="what-to-eat-section">
+            <div class ="eat-places-text">
+                <h4>What to eat</h4>
+                <p>Explore the classics, embrace local favorites, and uncover hidden gems</p>
+            </div>
+            <div class ="eat-places-img">
+                <div class = "eat-place">
+                    <img src="germanfood1.png" alt="Schwarzwaldstube">
+                    <p>Schwarzwaldstube</p><br>
+                    <p>5 stars</p><br>
+                    <p>Fine Dining</p>
+                </div>
+                <div class = "eat-place">
+                    <img src="germanfood2.png" alt="Hofbrauhaus">
+                    <p>Hofbrauhaus</p><br>
+                    <p>4 stars</p><br>
+                    <p>Historic</p>
+                </div>
+                <div class = "eat-place">
+                    <img src="germanfood3.png" alt="Atelier">
+                    <p>Atelier</p><br>
+                    <p>4 stars</p><br>
+                    <p>Gormet Cusine</p>
+                </div>
+            </div> 
+        </div>  
+    </div>
+
+    <div class="destinations-section">
+        <h2>Destinations</h2>
+        <div class="all-destinations">
+            <div class="destination">
+                <div class="destination-content">
+                    <h4>Berlin</h4>
+                </div>
+            </div>
+            <div class="destination">
+                <div class="destination-content">
+                    <h4>Munich</h4>
+                </div>
+            </div>
+            <div class="destination">
+                <div class ="destination-content">
+                    <h4>Cologne</h4>
+                </div>
+            </div>
+            <div class="destination">
+                <div class ="destination-content">
+                    <h4>Rhine Valley</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="subscribe-container">
+            <div class="subscribe-text">
+                <h2>The TravelWise Newsletter</h2>
+                <p>Get inspired! Receive travel discounts, tips, and behind-the-scenes stories.</p>
+            </div>
+            <div class="form-container">
+                <input type="email" class="email-input" placeholder="Your email">
+                <button type="submit" class="subscribe-button">Subscribe</button>
+            </div>
+        </div>
+        <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
+        <div class="page-links">
+            <a href="#">Home</a>
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Our Packages</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 TravelWise. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        
+        menuButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
