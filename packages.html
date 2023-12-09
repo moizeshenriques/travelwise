@@ -161,11 +161,15 @@
             background-color: #f9ad77;
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 900px) {
             
         .packages-table {
             display: block;
             width: auto;
+        }
+
+        thead {
+            display: none;
         }
 
         .packages-table th,
@@ -175,53 +179,70 @@
             display: block;
         }
 
+        .package-title {
+            font-size: 20px;
+            background-color: #5842A3;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .package-title span {
+            font-size: 22px;
+            color: #f9ad77;
+        }
+
         .packages-table th {
             text-align: center;
         }
 
-            .content {
-                flex-direction: column;
-            }
+        .content {
+            flex-direction: column;
+        }
 
-            .left-section {
-                width: 100%;
-                padding: 0;
-                text-align: center;
-            }
+        .left-section {
+            width: 100%;
+            padding: 0;
+            text-align: center;
+        }
 
-            .left-section h1 {
-                margin-left: 0;
-                white-space: normal;
-                font-size: 35px;
-            }
+        .left-section h1 {
+            margin-left: 0;
+            white-space: normal;
+            font-size: 35px;
+        }
 
-            .left-section p {
-                margin-left: 0;
-                font-size: 18px;
-            }
+        .left-section p {
+            margin-left: 0;
+            font-size: 18px;
+        }
 
-            .button {
-                margin: 0;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-            }
+        .button {
+            margin: 0;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
 
-            .right-section {
-                width: 100%;
-                padding: 0;
-            }
+        .right-section {
+            width: 100%;
+            padding: 0;
+        }
 
-            .right-section img {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                width: 100%;
-            }
+        .right-section img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
 
-            .packages-section {
-                padding: 20px;
-            }
+        .packages-section {
+            padding: 20px;
+        }
+
+        .sign-up-container {
+            text-align: center;
+        }
         }
 
 
@@ -281,7 +302,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Premium Package <br> Best Value!</td>
+                    <td class="package-title">Premium Package <br> <span>Best Value!</span></td>
                     <td><strong>First consultation is free</strong>, then $200 one-time payment</td>
                     <td>
                         <ul>
@@ -294,9 +315,11 @@
                             <li>• Customized travel packages for special occasions</li>
                         </ul>
                     </td>
-                    <td><a href="https://moizeshenriques.github.io/travelwise/sign-up.html" class="package-signup-button">Sign Up</a></td>
+                    <td class="sign-up-container">
+                        <a href="https://moizeshenriques.github.io/travelwise/sign-up.html" class="package-signup-button">Sign Up</a>
+                    </td>
                 <tr>
-                    <td>Intermediate Package</td>
+                    <td  class="package-title">Intermediate Package</td>
                     <td><strong>First consultation is free</strong>, then $150 one-time payment</td>
                     <td>
                         <ul>
@@ -309,10 +332,12 @@
                             <li>• Assistance with visa and travel documentation</li>
                         </ul>
                     </td>
-                    <td><a href="https://moizeshenriques.github.io/travelwise/sign-up.html" class="package-signup-button">Sign Up</a></td>
+                    <td class="sign-up-container">
+                        <a href="https://moizeshenriques.github.io/travelwise/sign-up.html" class="package-signup-button">Sign Up</a>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Basic Package</td>
+                    <td  class="package-title">Basic Package</td>
                     <td><strong>First consultation is free</strong>, then $150 one-time payment</td>
                     <td>
                         <ul>
@@ -325,7 +350,9 @@
                             <li>• Regular updates on budget travel trends</li>
                         </ul>
                     </td>
-                    <td><a href="https://moizeshenriques.github.io/travelwise/sign-up.html" class="package-signup-button">Sign Up</a></td>
+                    <td class="sign-up-container">
+                        <a href="https://moizeshenriques.github.io/travelwise/sign-up.html" class="package-signup-button">Sign Up</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
