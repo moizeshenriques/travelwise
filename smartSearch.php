@@ -7,6 +7,25 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
 <link href='https://fonts.googleapis.com/css?family=Poppins'>
 <link rel="stylesheet" href="styles.css">
+<script>
+            document.addEventListener('DOMContentLoaded', function () {
+        const subscribeButton = document.querySelector('.subscribe-button');
+        const emailInput = document.querySelector('.email-input');
+
+        subscribeButton.addEventListener('click', function () {
+            // Email validation using regular expression
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isEmailValid = emailPattern.test(emailInput.value);
+
+            if (!isEmailValid) {
+                alert('Please enter a valid email address.');
+            } else {
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = ''; // Clear the email input
+            }
+        });
+    });
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -306,6 +325,7 @@ form {
 }
 
 </style>
+    
 <header>
     <div class="logo">
         <img src="logotravelwise.png">
