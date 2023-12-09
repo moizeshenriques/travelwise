@@ -266,7 +266,7 @@
             color: white;
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 900px) {
             .intro-section {
                 flex-direction: column;
             }
@@ -309,6 +309,10 @@
                 width: 95%;
             }
 
+            .works-steps img {
+                width: 50%;
+            }
+
             .all-destinations {
                 flex-direction: column;
                 align-items: center;
@@ -319,6 +323,21 @@
 
             .destination {
                 width: 90%;
+                text-decoration: none
+            }
+
+            .destination img {
+                width: 100%;
+            }
+
+            .destination p {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+            }
+
+            .days {
+                margin-bottom: 1rem !important;
             }
 
             .testimonials-section {
@@ -412,12 +431,12 @@
         <h5>EXPLORE</h5>
         <h2>Top Destinations</h2>
         <div class="all-destinations">
-            <a href="bali.html">
-            <div class="destination">
+            <a  class="destination" href="bali.html">
+            <div>
                 <img src="images/home/bali1.png" alt="Bali">
                 <p>Bali</p>
                 <p><b>$76/day</b></p><br>
-                <p>10 Days Trip</p>
+                <p class="days">10 Days Trip</p>
             </div>
             </a>
             <div class="destination">
