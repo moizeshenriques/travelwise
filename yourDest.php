@@ -306,22 +306,23 @@ smart form */
     //padding-right: 10%;
     float: left;
 }
-
-.filterSubmit {
-    background-color: #5842A3;
-    margin-top: 20px;
-    color: #fff;
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    width: 200px;
-}
-
 .filter-form-drop {
-    width: 250px;
+    width: 300px;
+    height: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.40);
+    flex-shrink: 0;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #1E1D4C;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 10px;
+    border-radius: 20px;
+    padding: 8px;
+    /* width: 250px;
     height: 50px;
     border: 2px solid rgba(0, 0, 0, 0.40);
     flex-shrink: 0;
@@ -334,9 +335,10 @@ smart form */
     font-weight: 400;
     line-height: normal;
     border-radius: 20px;
-    text-align: center;
+    text-align: center; */
     //padding: 8px;
 }
+
 
 </style>
 <head>
@@ -358,10 +360,6 @@ smart form */
 </head>
 <body>
     <?php
-        $truth_array=array(0,0,0,0,0,0,0,0);
-        $items_arr = array(8);
-        $price_arr = array(8);
-
         $server = "localhost";
         $userid = "uuwqcmqvkoyqq";
         $pw = "`%c8@keh6)d;";
@@ -379,96 +377,254 @@ smart form */
         $conn->select_db($db);
 
 	    //run a query
-        $query = "SELECT * from Countries";
-        $result = $conn->query($query);
+        // $query = "SELECT * from Countries";
+        // $result = $conn->query($query);
        
-        $userPrice = $_POST['travelBudget'];
-        $userDays = $_POST["numDays"];
-        $userTravelers = $_POST["numTravelers"];
-        ?>
-        <div class="form-summary-container">
-        <?php
-        //echo "<div class='smart-form-sum'>$userPrice</div><br>";
+        $userPrice = $_REQUEST['travelBudget'];
+        $userDays = $_REQUEST["numDays"];
+        $userTravelers = $_REQUEST["numTravelers"];
+        $userFilter = $_REQUEST["dropDown"];
 
-        ?>
-        </div>
-        <div class="form-summary-container">
-            <div class="smart-form-sum">
-                <?php
-                    echo '<div class="budget-sum">';
-                    echo '<img src="newmoney.png" width=7%>';
-                    echo "<p><b>Total travel budget:</b> $" . $userPrice . "</p> <br>";
-                    echo '</div>';
-                    echo '<div class="days-sum">';
-                    echo '<img src="calendar.png" width=10%>';
-                    echo "<p><b> Number of days: </b>" . $userDays . "<br></p>";
-                    echo '</div>';
-                    echo '<div class="travelers-sum">';
-                    echo '<img src="person.png" width=6%>';
-                    echo "<p><b> Number of travelers: </b>" . $userTravelers . "<br> </p>";
-                    echo '</div>';
-                ?>
-            </div>
-        </div>
-        <div class = "your-dest-main-area">
-
-        <div class="filter-container">
-        <h2>Filter By</h2>
-        <div class="filter-form-container">
-        <form name="filterForm" onsubmit="return filterFunction($userPrice, $userDays, $userTravelers)" method="post">
-            <select name="dropDown" class="filter-form-drop" id = "dropDown" placeholder="Choose a filter">
-            <option value="" disabled selected>Select a filter</option>
-            <option value = "Alphabetical">Alphabetical</option>
-            <option value = "Price">Price (ascending)</option>
-            <option value = "Adventure">Adventure escapes</option>
-            <option value = "City">City explorations</option>
-            <option value = "Relaxation">Relaxation retreats</option>
-            <option value = "Cultural journeys">Family fun</option>
-            <option value = "Rating">TravelWise rating</option><br>
-            <input id="submit" class="filterSubmit" type="submit" value="Filter"><br>
-        </form>   
-        </div>     
-        </div>
-
-        <?php
-
-        $count = 0;
-        while ($rows = mysqli_fetch_assoc($result)) {
-            $Price = $rows['Price'];
-            $price_per_day = intdiv($userPrice, $userDays);
-            $price_per_day_trav = intdiv($price_per_day, $userTravelers);
-            if ($Price <= $price_per_day_trav) {
-                $Name = $rows['Name'];
-                $Image = $rows['Image'];
-                $items_arr[$count] = $Name;
-                $price_arr[$count] = $Price;
-                $truth_array[$count] =1;
-                echo '<div class="location-section">';
-                echo '<div class="location-container">';
-                    echo '<div class="destLocation">';
-                        echo "<br><p><b>". $Name . "</b></p>";
-                        echo "<br>";
-                        echo "<p> $" . $Price . "/day per traveler</p>";
-                        echo '<img src="' . $Image . '" width=100% height=100%/><br>';
-                    echo '</div>';
-                echo '</div>';
-                echo '</div>';
-            }
-            //increase count by 1
-            $count++;
-        }
-        //close connection
-        $conn->close();
     ?>
 
+    <div class="form-summary-container">
+        <div class="smart-form-sum">
+            <?php
+                echo '<div class="budget-sum">';
+                echo '<img src="newmoney.png" width=7%>';
+                echo "<p><b>Total travel budget:</b> $" . $userPrice . "</p> <br>";
+                echo '</div>';
+                echo '<div class="days-sum">';
+                echo '<img src="calendar.png" width=10%>';
+                echo '<p><b> Number of days: </b>' . $userDays . '<br></p>';
+                echo '</div>';
+                echo '<div class="travelers-sum">';
+                echo '<img src="person.png" width=6%>';
+                echo "<p><b> Number of travelers: </b>" . $userTravelers . "<br> </p>";
+                echo '</div>';
+            ?>
+        </div>
     </div>
+        <?php
+        if ($userFilter == "Alphabetical") {
+            $query = "SELECT * from Countries ORDER BY Name";
+            $result = $conn->query($query);
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $Price = $rows['Price'];
+                $price_per_day_trav = $userPrice;
+                $price_per_day = intdiv($userPrice, $userDays);
+                $price_per_day_trav = intdiv($price_per_day, $userTravelers);
+                if ($Price <= $price_per_day_trav) {
+                    $Name = $rows['Name'];
+                    $Image = $rows['Image'];
+                    $Price = $rows['Price'];
+                    echo '<div class="location-section">';
+                        echo '<div class="location-container">';
+                            echo '<div class="destLocation">';
+                            echo "<br><p><b>". $Name . "</b></p>";
+                            echo "<br>";
+                            echo "<p> $" . $Price . "/day per traveler</p>";
+                            echo '<img src="' . $Image . '" width=100% height=100%/><br>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        } else if ($userFilter == "Default") {
+            $query = "SELECT * from Countries";
+            $result = $conn->query($query);
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $Price = $rows['Price'];
+                $price_per_day_trav = $userPrice;
+                $price_per_day = intdiv($userPrice, $userDays);
+                $price_per_day_trav = intdiv($price_per_day, $userTravelers);
+                if ($Price <= $price_per_day_trav) {
+                    $Name = $rows['Name'];
+                    $Image = $rows['Image'];
+                    $Price = $rows['Price'];
+                    echo '<div class="location-section">';
+                        echo '<div class="location-container">';
+                            echo '<div class="destLocation">';
+                            echo "<br><p><b>". $Name . "</b></p>";
+                            echo "<br>";
+                            echo "<p> $" . $Price . "/day per traveler</p>";
+                            echo '<img src="' . $Image . '" width=100% height=100%/><br>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        } else if ($userFilter == "Price") {
+           $query = "SELECT * from Countries ORDER BY Price";
+           $result = $conn->query($query);
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $Price = $rows['Price'];
+                $price_per_day_trav = $userPrice;
+                $price_per_day = intdiv($userPrice, $userDays);
+                $price_per_day_trav = intdiv($price_per_day, $userTravelers);
+                if ($Price <= $price_per_day_trav) {
+                    $Name = $rows['Name'];
+                    $Image = $rows['Image'];
+                    $Price = $rows['Price'];
+                    echo '<div class="location-section">';
+                        echo '<div class="location-container">';
+                            echo '<div class="destLocation">';
+                            echo "<br><p><b>". $Name . "</b></p>";
+                            echo "<br>";
+                            echo "<p> $" . $Price . "/day per traveler</p>";
+                            echo '<img src="' . $Image . '" width=100% height=100%/><br>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        } else if ($userFilter == "Adventure") {
+            $query = "SELECT * from Countries WHERE Type LIKE '%Adventure%'";
+            $result = $conn->query($query);
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $Price = $rows['Price'];
+                $price_per_day_trav = $userPrice;
+                $price_per_day = intdiv($userPrice, $userDays);
+                $price_per_day_trav = intdiv($price_per_day, $userTravelers);
+                if ($Price <= $price_per_day_trav) {
+                    $Name = $rows['Name'];
+                    $Image = $rows['Image'];
+                    $Price = $rows['Price'];
+                    echo '<div class="location-section">';
+                        echo '<div class="location-container">';
+                            echo '<div class="destLocation">';
+                            echo "<br><p><b>". $Name . "</b></p>";
+                            echo "<br>";
+                            echo "<p> $" . $Price . "/day per traveler</p>";
+                            echo '<img src="' . $Image . '" width=100% height=100%/><br>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        } else if ($userFilter == "City") {
+            $query = "SELECT * from Countries WHERE Type LIKE '%City%'";
+            $result = $conn->query($query);
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $Price = $rows['Price'];
+                $price_per_day_trav = $userPrice;
+                $price_per_day = intdiv($userPrice, $userDays);
+                $price_per_day_trav = intdiv($price_per_day, $userTravelers);
+                if ($Price <= $price_per_day_trav) {
+                    $Name = $rows['Name'];
+                    $Image = $rows['Image'];
+                    $Price = $rows['Price'];
+                    echo '<div class="location-section">';
+                        echo '<div class="location-container">';
+                            echo '<div class="destLocation">';
+                            echo "<br><p><b>". $Name . "</b></p>";
+                            echo "<br>";
+                            echo "<p> $" . $Price . "/day per traveler</p>";
+                            echo '<img src="' . $Image . '" width=100% height=100%/><br>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        } else if ($userFilter == "Relaxation") {
+            $query = "SELECT * from Countries WHERE Type LIKE '%Relax%'";
+            $result = $conn->query($query);
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $Price = $rows['Price'];
+                $price_per_day_trav = $userPrice;
+                $price_per_day = intdiv($userPrice, $userDays);
+                $price_per_day_trav = intdiv($price_per_day, $userTravelers);
+                if ($Price <= $price_per_day_trav) {
+                    $Name = $rows['Name'];
+                    $Image = $rows['Image'];
+                    $Price = $rows['Price'];
+                    echo '<div class="location-section">';
+                        echo '<div class="location-container">';
+                            echo '<div class="destLocation">';
+                            echo "<br><p><b>". $Name . "</b></p>";
+                            echo "<br>";
+                            echo "<p> $" . $Price . "/day per traveler</p>";
+                            echo '<img src="' . $Image . '" width=100% height=100%/><br>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        } else if ($userFilter == "Culture") {
+            $query = "SELECT * from Countries WHERE Type LIKE '%Culture%'";
+            $result = $conn->query($query);
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $Price = $rows['Price'];
+                $price_per_day_trav = $userPrice;
+                $price_per_day = intdiv($userPrice, $userDays);
+                $price_per_day_trav = intdiv($price_per_day, $userTravelers);
+                if ($Price <= $price_per_day_trav) {
+                    $Name = $rows['Name'];
+                    $Image = $rows['Image'];
+                    $Price = $rows['Price'];
+                    echo '<div class="location-section">';
+                        echo '<div class="location-container">';
+                            echo '<div class="destLocation">';
+                            echo "<br><p><b>". $Name . "</b></p>";
+                            echo "<br>";
+                            echo "<p> $" . $Price . "/day per traveler</p>";
+                            echo '<img src="' . $Image . '" width=100% height=100%/><br>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        } else if ($userFilter == "Family") {
+            $query = "SELECT * from Countries WHERE Type LIKE '%Family%'";
+           $result = $conn->query($query);
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $Price = $rows['Price'];
+                $price_per_day_trav = $userPrice;
+                $price_per_day = intdiv($userPrice, $userDays);
+                $price_per_day_trav = intdiv($price_per_day, $userTravelers);
+                if ($Price <= $price_per_day_trav) {
+                    $Name = $rows['Name'];
+                    $Image = $rows['Image'];
+                    $Price = $rows['Price'];
+                    echo '<div class="location-section">';
+                        echo '<div class="location-container">';
+                            echo '<div class="destLocation">';
+                            echo "<br><p><b>". $Name . "</b></p>";
+                            echo "<br>";
+                            echo "<p> $" . $Price . "/day per traveler</p>";
+                            echo '<img src="' . $Image . '" width=100% height=100%/><br>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        } else if ($dropValue == "Rating") {
+            $query = "SELECT * from Countries ORDER BY Rating";
+            $result = $conn->query($query);
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $Price = $rows['Price'];
+                $price_per_day_trav = $userPrice;
+                $price_per_day = intdiv($userPrice, $userDays);
+                $price_per_day_trav = intdiv($price_per_day, $userTravelers);
+                if ($Price <= $price_per_day_trav) {
+                    $Name = $rows['Name'];
+                    $Image = $rows['Image'];
+                    $Price = $rows['Price'];
+                    echo '<div class="location-section">';
+                        echo '<div class="location-container">';
+                            echo '<div class="destLocation">';
+                            echo "<br><p><b>". $Name . "</b></p>";
+                            echo "<br>";
+                            echo "<p> $" . $Price . "/day per traveler</p>";
+                            echo '<img src="' . $Image . '" width=100% height=100%/><br>';
+                            echo '</div>';
+                        echo '</div>';
+                    echo '</div>';
+                }
+            }
+        }
 
-    <script>
-    function filterFunction($userPrice, $userDays, $userTravelers) {
-        echo "user price" . $userPrice . "<br>"
-    }
-    </script>
-
+        ?>
     <br><br>
     <footer>
         <div class="subscribe-container">
@@ -492,6 +648,5 @@ smart form */
             &copy; 2023 TravelWise. All rights reserved.
         </div>
     </footer>
-    
 </body>
 </html>
