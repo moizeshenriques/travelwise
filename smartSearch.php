@@ -281,6 +281,28 @@ form {
         margin-left: 0;
         margin-top: 10px;
     }
+    .filter-container {
+        display: block;
+        margin-left: 5%;
+        float: left;
+    }
+    
+    .filter-form-drop {
+        width: 250px;
+        height: 50px;
+        border: 2px solid rgba(0, 0, 0, 0.40);
+        flex-shrink: 0;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: #1E1D4C;
+        font-family: Poppins;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border-radius: 20px;
+        text-align: center;
+    }
 }
 
 </style>
@@ -322,6 +344,20 @@ form {
         <input type="number" id="travelBudget" name = "travelBudget" placeholder="Total Travel Budget" min="1" required><br><br>
         <input type="number" id="numDays" name = "numDays" placeholder="Number of days" min="1" required><br><br>
         <input type="number" id="numTravelers" name="numTravelers" placeholder="Number of travelers" min="1" required><br><br>
+
+        <h2>Filter By</h2>
+        <select name="dropDown" class="filter-form-drop" id = "dropDown" name="dropDown" placeholder="Choose a filter" required>
+            <option value="" disabled selected>Select a filter</option>
+            <option value = "Default">No filter</option>
+            <option value = "Alphabetical">Alphabetical</option>
+            <option value = "Price">Price (ascending)</option>
+            <option value = "Adventure">Adventure escapes</option>
+            <option value = "City">City explorations</option>
+            <option value = "Relaxation">Relaxation retreats</option>
+            <option value = "Family">Family fun</option>
+            <option value = "Culture">Cultural journey</option>
+            <option value = "Rating">TravelWise rating</option><br>
+        </select>
         <input type="submit" id="submitButton" value="Search">
     </form>
         </div>
