@@ -53,152 +53,62 @@
         });
     </script>
     <style>
-            footer {
+    
+    .signup-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        color: #6C6C6C;
+            
+    }
+    
+    #signup-form {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
     }
 
-    .subscribe-container {
-        margin-left: 0;
-    }
-
-    .form-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .email-input {
-        text-align: center;
-    }
-
-    .logo-small {
-        width: 30%;
-        margin: 0;
-        margin-top: 30px;
-    }
-
-    .page-links {
-        margin: 0;
-        align-items: center;
-        margin-top: 30px
-    }
-
-    .copyright {
-        margin-left: 0;
+    .signup-container label {
         margin-top: 10px;
+        color: #6C6C6C;
+        justify-content: left;
+        align-items: left;
+            
     }
 
-                .content {
-            display: flex;
-            padding: 20px;
-        }
-        
-        .signup-container {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #5842A3;
-            text-align: center;
-        }
+    .signup-container input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        font-family: 'Poppins';
+        color: #6C6C6C;
+    }
 
-        form {
-            display: flex;
-            flex-direction: column;
-        }
+    .signup-container button {
+        width: 50%;
+        margin-left: 150px;
+        margin-top: 20px;
+        align-items: center;
+        background: #F76A09;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        font-size: 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+    }
 
-        label {
-            margin-top: 10px;
-            color: #333;
-            justify-content: left;
-            align-items: left;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            font-family: 'Poppins';
-        }
-
-        button {
-            width: 50%;
-            margin-left: 150px;
-            margin-top: 20px;
-            align-items: center;
-            background: #F76A09;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            font-size: 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        button:hover {
-            background-color: #f9ad77;
-        }
-
-        @media screen and (max-width: 600px) {
-            header {
-                flex-direction: column;
-            }
-
-            .logo {
-                justify-content: center;
-                margin-bottom: 2rem;
-            }
-
-            .logo img {
-                width: 50%;
-                margin: 0;
-            }
-
-            .logo h1 {
-                font-size: 0;
-            }
-
-            #menu-button {
-                display: block;
-                width: 100%;
-                margin-left: 0; 
-                margin-top: 0;
-                flex-direction: column;
-            }
-
-            #myNav-list {
-                display: none;
-            }
-
-            #menu-button.active + #myNav-list {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
-            #signup-form button {
-                width: 100%;
-                margin-left: 0;
-            }
-
-            .subscribe-button {
-                width: 100%;
-                margin-left: 0;
-            }
-        }
+    .signup-container button:hover {
+        background-color: #f9ad77;
+    }
 
     </style>
 </head>
