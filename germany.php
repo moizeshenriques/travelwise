@@ -378,10 +378,9 @@ footer {
 </head>
 <body>
     <header>
-        <div class="logo">
+        <a href="index.html" class="logo">
             <img src="logotravelwise.png">
-            <h1>Travel Wise</h1>
-        </div>
+        </a>
 
         <button id="menu-button">
             <div class="bar"></div>
@@ -390,11 +389,10 @@ footer {
         </button>
 
         <nav class="nav-list" id="myNav-list">
-            <a class="nav-item" href="#">Smart Search</a>
-            <a class="nav-item" href="#">Destinations</a>
-            <a class="nav-item" href="#">Our Packages</a>
-            <a class="nav-item" href="#">Currency Rates</a>
-            <a class="nav-item" href="#">Budgeting Hacks</a>
+            <a class="nav-item" href="smartSearch.php">Smart Search</a>
+            <a class="nav-item" href="packages.html">Our Packages</a>
+            <a class="nav-item" href="currency-rate.html">Currency Rates</a>
+            <a class="nav-item" href="budget-hacks.html">Budgeting Hacks</a>
         </nav>
     </header>
 
@@ -555,12 +553,11 @@ footer {
         </div>
         <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
         <div class="page-links">
-            <a href="#">Home</a>
-            <a href="#">Smart Search</a>
-            <a href="#">Destinations</a>
-            <a href="#">Our Packages</a>
-            <a href="#">Currency Rates</a>
-            <a href="#">Budgeting Hacks</a>
+            <a href="index.html">Home</a>
+            <a href="smartSearch.php">Smart Search</a>
+            <a href="packages.html">Our Packages</a>
+            <a href="currency-rate.html">Currency Rates</a>
+            <a href="budget-hacks.html">Budgeting Hacks</a>
         </div>
         <div class="copyright">
             &copy; 2023 TravelWise. All rights reserved.
