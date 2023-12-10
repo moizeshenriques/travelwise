@@ -3,29 +3,10 @@
 <meta charset="utf-8">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
-<link href='https://fonts.googleapis.com/css?family=Poppins'>
-<link rel="stylesheet" href="styles.css">
-<script>
-            document.addEventListener('DOMContentLoaded', function () {
-        const subscribeButton = document.querySelector('.subscribe-button');
-        const emailInput = document.querySelector('.email-input');
-
-        subscribeButton.addEventListener('click', function () {
-            // Email validation using regular expression
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const isEmailValid = emailPattern.test(emailInput.value);
-
-            if (!isEmailValid) {
-                alert('Please enter a valid email address.');
-            } else {
-                alert('Thank you for subscribing to our newsletter!');
-                emailInput.value = ''; // Clear the email input
-            }
-        });
-    });
-</script>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -67,6 +48,11 @@ nav a {
     font-weight: 500;
     white-space: nowrap;
     font-family: 'Poppins', sans-serif;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color:  #b390e6;
 }
 
 footer {
@@ -112,6 +98,9 @@ footer {
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
 }
+.subscribe-button:hover {
+    background-color: #8250c9; 
+}
 
 .page-links {
     max-width: 40%;
@@ -146,26 +135,89 @@ footer {
     max-width: 80%;
 }
 
-/* smart search styling */
-#smart-search-title h1, #your-dest-title h1 {
-    color: #5842A3;
-    font-style: normal;
-    font-weight: 700;
-    margin-left: 50px;
-    font-size: 32px;
+#menu-button {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
 }
 
-#smart-search-title p {
-    font-size: 18px;
-    margin-left: 50px;
-    margin-right: 50px;
+#menu-button .bar {
+    width: 30px;
+    height: 3px;
+    background: #212121;
+    margin: 6px 0;
+    transition: 0.4s;
 }
+
+@media screen and (max-width: 1400px) {
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .subscribe-container {
+        width: 40%;
+    }
+
+    .logo-small {
+        margin: 0;
+        margin-left: 2rem;
+    }
+}
+/* smart search styling */
+
+.content {
+    display: flex;
+    padding: 20px;
+}
+
+.smart-search-section {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.smart-search-section h1 {
+    color: #5842A3; 
+    font-size: 60px;
+    font-family: 'Volkhov', serif; 
+    margin-left: 100px;
+    white-space: nowrap;
+}
+
+.smart-search-section p {
+    color: #6C6C6C; 
+    font-size: 20px; 
+    margin-left: 100px;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.smart-search-section img {
+    float: right;
+    margin-right: 2rem;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    right: 0;
+}
+
 
 .smart-form-container {
-    margin-left: 50px;
+    margin-top: 60px;
+    margin-left: 100px;
 }
 
-#travelBudget, #numDays, #numTravelers {
+.smart-form {
+    display: flex;
+}
+
+#travelBudget, #numDays, #numTravelers, #dropDown {
     width: 300px;
     height: 50px;
     border: 2px solid rgba(0, 0, 0, 0.40);
@@ -178,90 +230,110 @@ footer {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-left: 10px;
     border-radius: 20px;
     padding: 8px;
 }
 
-.smart-form {
-    display: flex;
+.smart-form h2{
+    color: #F76A09;
+    font-family: 'Volkhov', serif;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 #submitButton {
-    width: 300px;
-    height: 50px;
-    border: 2px solid rgba(0, 0, 0, 0.40);
-    flex-shrink: 0;
     background: #F76A09;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: 10px;
-    border-radius: 20px;
-    text-align: center;
+    color: #fff;
+    padding: 16px 30px;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 40px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+#submitButton:hover {
+    background-color: #f9ad77; 
+}  
+
+.smart-form-container-2 {
+    display: none;
 }
 
-.luggage-pic {
-    margin-left: 20%;
-    margin-right: 50px;
-}
+@media screen and (max-width: 900px) {
+    header {
+        flex-direction: column;
+    }
 
-@media screen and (max-width: 600px) {
     .logo {
         justify-content: center;
         margin-bottom: 2rem;
     }
 
     .logo img {
-        width: 50%;
+        width: 40%;
+        margin: 0;
     }
 
     .logo h1 {
         font-size: 0;
     }
 
-    #smart-search-title {
-        text-align: center;
+    #menu-button {
+        display: block;
     }
 
-    #smart-search-title h1 {
-        margin-left: 0;
+    #myNav-list {
+        display: none;
     }
 
-    .smart-form-container {
-        margin-left: 0;
-    }
-
-    .smart-form {
+    #menu-button.active + #myNav-list {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        gap: 10px;
     }
 
-    .form {
+    .content {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .smart-search-section {
+        padding: 0;
+        align-items: center;
+    }
+
+    .search-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
 
-    #travelBudget, #numDays, #numTravelers, #submitButton {
+    .smart-search-section h1 {
         margin-left: 0;
+        white-space: normal;
+        font-size: 42px;
     }
 
-    .luggage-pic {
-        margin: 1rem;
-        border-radius: 10px;
+    .smart-search-section p {
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    .smart-search-section img {
+        margin-right: 0;
+        position: relative;
         width: 100%;
+        height: 100%;
+        margin-top: 2rem;
+    }
+
+    .smart-form-container {
+        margin-left: 0;
     }
 
     footer {
@@ -286,8 +358,8 @@ form {
 
     .logo-small {
         width: 30%;
-        margin: 0;
-        margin-top: 30px;
+        margin: 0 !important;
+        margin-top: 30px !important;
     }
 
     .page-links {
@@ -300,92 +372,71 @@ form {
         margin-left: 0;
         margin-top: 10px;
     }
-    .filter-container {
-        display: block;
-        margin-left: 5%;
-        float: left;
-    }
-    
-    .filter-form-drop {
-        width: 250px;
-        height: 50px;
-        border: 2px solid rgba(0, 0, 0, 0.40);
-        flex-shrink: 0;
-        background: #FFF;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        color: #1E1D4C;
-        font-family: Poppins;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        border-radius: 20px;
-        text-align: center;
-    }
+
+
 }
 
 </style>
-    
 <header>
     <div class="logo">
-        <img src="logotravelwise.png">
-    </div>
+            <img src="logotravelwise.png">
+            <h1>Travel Wise</h1>
+        </div>
 
-    <button id="menu-button">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </button>
+        <button id="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
 
-    <nav class="nav-list" id="myNav-list">
-        <a class="nav-item" href="#">Smart Search</a>
-        <a class="nav-item" href="#">Destinations</a>
-        <a class="nav-item" href="#">Our Packages</a>
-        <a class="nav-item" href="#">Currency Rates</a>
-        <a class="nav-item" href="#">Budgeting Hacks</a>
-    </nav>
+        <nav class="nav-list" id="myNav-list">
+            <a class="nav-item" href="#">Smart Search</a>
+            <a class="nav-item" href="#">Destinations</a>
+            <a class="nav-item" href="#">Our Packages</a>
+            <a class="nav-item" href="#">Currency Rates</a>
+            <a class="nav-item" href="#">Budgeting Hacks</a>
+        </nav>
 </header>
-<section id="smart-search-section">
-    <div id="smart-search-title">
-        <h1>Smart Search</h1>
-        <p>Unlock budget-friendly destinations with Travel Wise's Smart Search—your gateway to affordable exploration, curated for unforgettable experiences within your means</p>
-    </div>
-</section>
-</head>
-<body>
-   <?php
-     echo '<form name="smartSearchForm" action="yourDest.php" method="post" >';
-    ?>
-    <br>
-    <!-- create order form -->
-    <div class="smart-form-container">
+<div class = "content">
+    <div class = "smart-search-section">
+        <div class="search-container">
+            <h1>Smart Search</h1>
+            <p>Unlock budget-friendly destinations with Travel Wise's Smart Search—your gateway to affordable exploration, curated for unforgettable experiences within your means</p>
+        <?php
+            echo '<form name="smartSearchForm" action="yourDest.php" method="post" >';
+        ?>
+        <div class="smart-form-container">
         <div class="smart-form">
-        <div class="form">
-        <input type="number" id="travelBudget" name = "travelBudget" placeholder="Total Travel Budget" min="1" required><br><br>
-        <input type="number" id="numDays" name = "numDays" placeholder="Number of days" min="1" required><br><br>
-        <input type="number" id="numTravelers" name="numTravelers" placeholder="Number of travelers" min="1" required><br><br>
-
-        <h2>Filter By</h2>
-        <select name="dropDown" class="filter-form-drop" id = "dropDown" name="dropDown" placeholder="Choose a filter" required>
-            <option value="" disabled selected>Select a filter</option>
-            <option value = "Default">No filter</option>
-            <option value = "Alphabetical">Alphabetical</option>
-            <option value = "Price">Price (ascending)</option>
-            <option value = "Adventure">Adventure escapes</option>
-            <option value = "City">City explorations</option>
-            <option value = "Relaxation">Relaxation retreats</option>
-            <option value = "Family">Family fun</option>
-            <option value = "Culture">Cultural journey</option>
-            <option value = "Rating">TravelWise rating</option><br>
-        </select>
-        <input type="submit" id="submitButton" value="Search">
-    </form>
+            <div class="form">
+                <input type="number" id="travelBudget" name = "travelBudget" placeholder="Total Travel Budget" min="1" required><br><br>
+                <input type="number" id="numDays" name = "numDays" placeholder="Number of days" min="1" required><br><br>
+                <input type="number" id="numTravelers" name="numTravelers" placeholder="Number of travelers" min="1" required><br><br>
+                
+                <h2>Filter By</h2>
+                <select name="dropDown" class="filter-form-drop" id = "dropDown" name="dropDown" placeholder="Choose a filter" required>
+                    <option value="" disabled selected>Select a filter</option>
+                    <option value = "Default">No filter</option>
+                    <option value = "Alphabetical">Alphabetical</option>
+                    <option value = "Price">Price (ascending)</option>
+                    <option value = "Adventure">Adventure escapes</option>
+                    <option value = "City">City explorations</option>
+                    <option value = "Relaxation">Relaxation retreats</option>
+                    <option value = "Family">Family fun</option>
+                    <option value = "Culture">Cultural journey</option>
+                    <option value = "Rating">TravelWise rating</option><br>
+                </select>
+                <br><br>
+                <input type="submit" id="submitButton" value="Search">
+            </div>
+        </div>
+        </form>
+    </div>
         </div>
         <img src="luggage.png" width="500" height="400" class="luggage-pic">
-        </div>
     </div>
-    <br>
-    <br>
+</div>
+</head>
+<body>
     <footer>
         <div class="subscribe-container">
             <div class="subscribe-text">
@@ -410,7 +461,6 @@ form {
             &copy; 2023 TravelWise. All rights reserved.
         </div>
     </footer>
-
     <script>
         const menuButton = document.getElementById('menu-button');
         
@@ -418,6 +468,7 @@ form {
             this.classList.toggle('active');
         });
     </script>
+
     </body>
 
 
