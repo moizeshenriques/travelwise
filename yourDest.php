@@ -83,6 +83,12 @@ footer {
     font-family: 'Poppins', sans-serif;
 }
 
+#your-dest-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .subscribe-button {
     background-color: #5842A3;
     color: #fff;
@@ -152,7 +158,12 @@ footer {
     border: 2px solid rgba(0, 0, 0, 0.40);
     flex-shrink: 0;
     background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
     color: #1E1D4C;
     font-family: Poppins;
     font-size: 18px;
@@ -162,6 +173,10 @@ footer {
     margin-left: 10px;
     border-radius: 20px;
     padding: 8px;
+}
+
+.budget-sum p #text {
+    color: #6C6C6C;
 }
 
 .smart-form {
@@ -174,7 +189,12 @@ footer {
     border: 2px solid rgba(0, 0, 0, 0.40);
     flex-shrink: 0;
     background: #F76A09;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
     color: #FFF;
     font-family: Poppins;
     font-size: 18px;
@@ -215,7 +235,12 @@ smart form */
     border: 1px solid rgba(0, 0, 0, 0.40);
     flex-shrink: 0;
     background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
     color: #1E1D4C;
     font-family: Poppins;
     font-size: 18px;
@@ -239,7 +264,12 @@ smart form */
     border-radius: 20px;
     border: 1.5px solid #000;
     background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
     margin: 10px;
     padding: 10px;
     text-align: center;
@@ -259,7 +289,12 @@ smart form */
     width: 500px;
     height: 400px;
     border-radius: 30px;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
+                0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
+                0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
+                0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
+                0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
+                0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
 }
 
 .destLocation p {
@@ -271,6 +306,13 @@ smart form */
     width: 100%;
     height: 300px;
     border-radius: 0px 0px 20px 20px;
+}
+
+.all-locations-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .location-container {
@@ -285,7 +327,7 @@ smart form */
     padding: 20px 0px 20px 0px;
     text-align: center;
     display: flex;
-    margin-left: 35%;
+    
 }
 
 #menu-button {
@@ -385,6 +427,7 @@ smart form */
         padding: 0;
         margin-left: 0;
         margin-bottom: 3.5rem;
+        width: 95%;
     }
 
     .location-container {
@@ -433,9 +476,9 @@ smart form */
 <head>
 
 <header>
-    <a href="index.html" class="logo">
+    <div class="logo">
         <img src="logotravelwise.png">
-    </a>
+    </div>
 
     <button id="menu-button">
         <div class="bar"></div>
@@ -444,10 +487,11 @@ smart form */
     </button>
 
     <nav class="nav-list" id="myNav-list">
-        <a class="nav-item" href="smartSearch.php">Smart Search</a>
-        <a class="nav-item" href="packages.html">Our Packages</a>
-        <a class="nav-item" href="currency-rate.html">Currency Rates</a>
-        <a class="nav-item" href="budget-hacks.html">Budgeting Hacks</a>
+        <a class="nav-item" href="#">Smart Search</a>
+        <a class="nav-item" href="#">Destinations</a>
+        <a class="nav-item" href="#">Our Packages</a>
+        <a class="nav-item" href="#">Currency Rates</a>
+        <a class="nav-item" href="#">Budgeting Hacks</a>
     </nav>
 </header>
 <div id="your-dest-title">
@@ -501,6 +545,7 @@ smart form */
             ?>
         </div>
     </div>
+    <div class="all-locations-container">
         <?php
         if ($userFilter == "Alphabetical") {
             $query = "SELECT * from Countries ORDER BY Name";
@@ -721,6 +766,7 @@ smart form */
         }
 
         ?>
+    </div>
     <br><br>
     <footer>
         <div class="subscribe-container">
@@ -735,11 +781,10 @@ smart form */
         </div>
         <img src="logotravelwise.png" alt="Travel Wise Logo" class="logo-small">
         <div class="page-links">
-            <a href="index.html">Home</a>
-            <a href="smartSearch.php">Smart Search</a>
-            <a href="packages.html">Our Packages</a>
-            <a href="currency-rate.html">Currency Rates</a>
-            <a href="budget-hacks.html">Budgeting Hacks</a>
+            <a href="#">Smart Search</a>
+            <a href="#">Destinations</a>
+            <a href="#">Currency Rates</a>
+            <a href="#">Budgeting Hacks</a>
         </div>
         <div class="copyright">
             &copy; 2023 TravelWise. All rights reserved.
