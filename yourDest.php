@@ -2,28 +2,9 @@
 <html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet"> 
-<script>
-	        document.addEventListener('DOMContentLoaded', function () {
-        const subscribeButton = document.querySelector('.subscribe-button');
-        const emailInput = document.querySelector('.email-input');
-
-        subscribeButton.addEventListener('click', function () {
-            // Email validation using regular expression
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const isEmailValid = emailPattern.test(emailInput.value);
-
-            if (!isEmailValid) {
-                alert('Please enter a valid email address.');
-            } else {
-                alert('Thank you for subscribing to our newsletter!');
-                emailInput.value = ''; // Clear the email input
-            }
-        });
-    });
-</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Volkhov&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
+<link rel="stylesheet" href="styles.css">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -152,6 +133,7 @@ footer {
     font-weight: 700;
     margin-left: 50px;
     font-size: 32px;
+    font-family: Volkhov;
 }
 
 #smart-search-title p {
@@ -278,17 +260,6 @@ smart form */
     height: 400px;
     border-radius: 30px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
-    /* border: 2px solid #000; */
-    /* width: 30%;
-    flex-shrink: 0;
-    border-radius: 20px;
-    //border: 2px solid #000;
-    background: #FFF;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
 }
 
 .destLocation p {
@@ -315,49 +286,148 @@ smart form */
     text-align: center;
     display: flex;
     margin-left: 35%;
-    //float: right;
 }
 
-.filter-container {
-    display: block;
-    //width: 30;
-    margin-left: 5%;
-    //padding-right: 10%;
-    float: left;
-}
-.filter-form-drop {
-    width: 300px;
-    height: 50px;
-    border: 2px solid rgba(0, 0, 0, 0.40);
-    flex-shrink: 0;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #1E1D4C;
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-left: 10px;
-    border-radius: 20px;
-    padding: 8px;
-    /* width: 250px;
-    height: 50px;
-    border: 2px solid rgba(0, 0, 0, 0.40);
-    flex-shrink: 0;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    color: #1E1D4C;
-    font-family: Poppins;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    border-radius: 20px;
-    text-align: center; */
-    //padding: 8px;
+#menu-button {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
 }
 
+#menu-button .bar {
+    width: 30px;
+    height: 3px;
+    background: #212121;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 1400px) {
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .subscribe-container {
+        width: 40%;
+    }
+
+    .logo-small {
+        margin: 0;
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        flex-direction: column;
+    }
+
+    .logo {
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .logo img {
+        width: 40%;
+        margin: 0;
+    }
+
+    .logo h1 {
+        font-size: 0;
+    }
+
+    #menu-button {
+        display: block;
+    }
+
+    #myNav-list {
+        display: none;
+    }
+
+    #menu-button.active + #myNav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #your-dest-title h1 {
+        margin-left: 0;
+        font-size: 35px;
+    }
+
+    #your-dest-title {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        text-align: center;
+    }
+
+    .smart-form-sum {
+        flex-direction: column;
+    }
+
+    .budget-sum, .days-sum, .travelers-sum {
+        width: 300px;
+    }
+
+    .form-summary-container {
+        margin-bottom: 2rem;
+    }
+
+    .location-section {
+        padding: 0;
+        margin-left: 0;
+        margin-bottom: 3.5rem;
+    }
+
+    .location-container {
+        width: 90%;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .subscribe-container {
+        margin-left: 0;
+    }
+
+    .form-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .email-input {
+        text-align: center;
+    }
+
+    .logo-small {
+        width: 30%;
+        margin: 0 !important;
+        margin-top: 30px !important;
+    }
+
+    .page-links {
+        margin: 0;
+        align-items: center;
+        margin-top: 30px
+    }
+
+    .copyright {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
 
 </style>
 <head>
@@ -366,11 +436,19 @@ smart form */
     <div class="logo">
         <img src="logotravelwise.png">
     </div>
-    <nav>
-        <a href="#">Smart Search</a>
-        <a href="#">Destinations</a>
-        <a href="#">Currency Rates</a>
-        <a href="#">Budgeting Hacks</a>
+
+    <button id="menu-button">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+
+    <nav class="nav-list" id="myNav-list">
+        <a class="nav-item" href="#">Smart Search</a>
+        <a class="nav-item" href="#">Destinations</a>
+        <a class="nav-item" href="#">Our Packages</a>
+        <a class="nav-item" href="#">Currency Rates</a>
+        <a class="nav-item" href="#">Budgeting Hacks</a>
     </nav>
 </header>
 <div id="your-dest-title">
@@ -667,5 +745,12 @@ smart form */
             &copy; 2023 TravelWise. All rights reserved.
         </div>
     </footer>
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        
+        menuButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
