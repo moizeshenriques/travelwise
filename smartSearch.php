@@ -280,6 +280,24 @@ footer {
     display: none;
 }
 
+@media screen and (max-width: 1200px) {
+    .smart-search-section {
+        width: 45%;
+    }
+
+    .smart-search-section img {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .smart-search-section img {
+        width: 350px;
+        height: 350px;
+    }
+}
+
 @media screen and (max-width: 900px) {
     header {
         flex-direction: column;
