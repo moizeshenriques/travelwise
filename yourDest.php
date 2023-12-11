@@ -156,15 +156,10 @@ footer {
 #travelBudget, #numDays, #numTravelers {
     width: 300px;
     height: 50px;
-    border: 2px solid rgba(0, 0, 0, 0.40);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     background: #FFF;
-    box-shadow: 0px 2.463px 4.187px 0px rgba(0, 0, 0, 0.00),
-                0px 10.838px 8.67px 0px rgba(0, 0, 0, 0.01),
-                0px 26.602px 17.292px 0px rgba(0, 0, 0, 0.01),
-                0px 51.234px 33.893px 0px rgba(0, 0, 0, 0.01),
-                0px 86.212px 62.319px 0px rgba(0, 0, 0, 0.02),
-                0px 133.012px 106.41px 0px rgba(0, 0, 0, 0.02);
+    border: 2px solid rgba(100, 100, 100, 0.4);
     color: #1E1D4C;
     font-family: Poppins;
     font-size: 18px;
