@@ -218,13 +218,30 @@ footer {
     display: flex;
 }
 
-#travelBudget, #numDays, #numTravelers, #dropDown {
+#travelBudget, #numDays, #numTravelers {
     width: 300px;
     height: 50px;
-    border: 2px solid rgba(0, 0, 0, 0.40);
+    border: 2px solid rgba(100, 100, 100, 0.4);
     flex-shrink: 0;
     background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #1E1D4C;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+#dropDown {
+    width: 318px;
+    height: 60px;
+    border: 2px solid rgba(100, 100, 100, 0.4);
+    flex-shrink: 0;
+    background: #FFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: #1E1D4C;
     font-family: Poppins;
     font-size: 18px;
@@ -248,10 +265,11 @@ footer {
     padding: 16px 30px;
     border: none;
     font-size: 16px;
+    margin-left: 8px;
     border-radius: 4px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 #submitButton:hover {
